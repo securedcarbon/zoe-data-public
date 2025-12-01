@@ -1,0 +1,96 @@
+{
+  "$schema": "../schemas/macrs-tables.schema.json",
+  "version": "2024.1",
+  "effective_date": "2024-01-01",
+  "last_updated": "2025-11-29",
+  "source": "IRS Publication 946 (2024)",
+  "source_url": "https://www.irs.gov/pub/irs-pdf/p946.pdf",
+  "notes": "BESS and qualified clean energy property qualify for 5-year MACRS",
+  "property_classes": {
+    "5-year": {
+      "description": "5-year property class for BESS, solar, wind, and qualified clean energy",
+      "depreciation_method": "200% declining balance",
+      "convention": "half-year",
+      "applicable_assets": [
+        "Energy storage technology",
+        "Solar equipment",
+        "Wind equipment",
+        "Qualified fuel cell property",
+        "Automobiles and light trucks"
+      ],
+      "schedule": [
+        {"year": 1, "rate": 0.2000, "cumulative": 0.2000},
+        {"year": 2, "rate": 0.3200, "cumulative": 0.5200},
+        {"year": 3, "rate": 0.1920, "cumulative": 0.7120},
+        {"year": 4, "rate": 0.1152, "cumulative": 0.8272},
+        {"year": 5, "rate": 0.1152, "cumulative": 0.9424},
+        {"year": 6, "rate": 0.0576, "cumulative": 1.0000}
+      ]
+    },
+    "7-year": {
+      "description": "7-year property class",
+      "depreciation_method": "200% declining balance",
+      "convention": "half-year",
+      "applicable_assets": [
+        "Office furniture",
+        "Agricultural machinery",
+        "Railroad track"
+      ],
+      "schedule": [
+        {"year": 1, "rate": 0.1429, "cumulative": 0.1429},
+        {"year": 2, "rate": 0.2449, "cumulative": 0.3878},
+        {"year": 3, "rate": 0.1749, "cumulative": 0.5627},
+        {"year": 4, "rate": 0.1249, "cumulative": 0.6876},
+        {"year": 5, "rate": 0.0893, "cumulative": 0.7769},
+        {"year": 6, "rate": 0.0892, "cumulative": 0.8661},
+        {"year": 7, "rate": 0.0893, "cumulative": 0.9554},
+        {"year": 8, "rate": 0.0446, "cumulative": 1.0000}
+      ]
+    },
+    "15-year": {
+      "description": "15-year property class for transmission/distribution",
+      "depreciation_method": "150% declining balance",
+      "convention": "half-year",
+      "applicable_assets": [
+        "Qualified improvement property",
+        "Land improvements",
+        "Municipal wastewater treatment"
+      ]
+    },
+    "20-year": {
+      "description": "20-year property class",
+      "depreciation_method": "150% declining balance",
+      "convention": "half-year",
+      "applicable_assets": [
+        "Farm buildings",
+        "Municipal sewers"
+      ]
+    }
+  },
+  "section_179": {
+    "description": "Section 179 expensing election",
+    "limits_2024": {
+      "maximum_deduction": 1220000,
+      "phase_out_threshold": 3050000,
+      "suv_limit": 30500
+    },
+    "limits_2025": {
+      "maximum_deduction": "Indexed for inflation",
+      "notes": "Check IRS guidance for current year limits"
+    }
+  },
+  "conventions": {
+    "half-year": {
+      "description": "Property placed in service treated as placed in service at midpoint of year",
+      "default": true
+    },
+    "mid-quarter": {
+      "description": "Used when >40% of property placed in service in Q4",
+      "trigger": "More than 40% of total depreciable basis placed in service during last quarter"
+    },
+    "mid-month": {
+      "description": "Used for real property",
+      "applicable_to": ["Residential rental", "Nonresidential real property"]
+    }
+  }
+}

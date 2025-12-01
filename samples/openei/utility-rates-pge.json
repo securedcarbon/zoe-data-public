@@ -1,0 +1,441 @@
+{
+  "utility": "Pacific Gas and Electric Co",
+  "utilityAbbrev": "PG&E",
+  "eiaid": 14328,
+  "state": "CA",
+  "dataSource": "OpenEI URDB",
+  "dataSourceUrl": "https://apps.openei.org/USURDB/",
+  "lastVerified": "2025-11-29",
+  "notes": "Sample rate structures for commercial/industrial BESS modeling. Actual rates may vary.",
+  "rates": [
+    {
+      "label": "B-19 Medium General Demand-Metered TOU",
+      "uri": "https://openei.org/apps/USURDB/rate/view/5c6ea61f5457a3454fcc88c4",
+      "sector": "Commercial",
+      "approved": true,
+      "effectiveDate": "2024-01-01",
+      "description": "Medium commercial TOU rate for demands 200-499 kW",
+      "demandMin": 200,
+      "demandMax": 499,
+      "fixedMonthlyCharge": 284.16,
+      "minMonthlyCharge": 284.16,
+      "demandRateStructure": [
+        {
+          "season": "Summer",
+          "period": "Peak Demand",
+          "rate": 21.54,
+          "unit": "kW",
+          "months": [5, 6, 7, 8, 9, 10],
+          "hours": "12:00-18:00 weekdays"
+        },
+        {
+          "season": "Summer",
+          "period": "Part-Peak Demand",
+          "rate": 5.98,
+          "unit": "kW",
+          "months": [5, 6, 7, 8, 9, 10],
+          "hours": "8:30-12:00, 18:00-21:30 weekdays"
+        },
+        {
+          "season": "Winter",
+          "period": "Part-Peak Demand",
+          "rate": 0.28,
+          "unit": "kW",
+          "months": [11, 12, 1, 2, 3, 4],
+          "hours": "8:30-21:30 weekdays"
+        },
+        {
+          "season": "All",
+          "period": "Max Demand",
+          "rate": 17.58,
+          "unit": "kW",
+          "months": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+          "hours": "all"
+        }
+      ],
+      "energyRateStructure": [
+        {
+          "season": "Summer",
+          "period": "Peak",
+          "rate": 0.19804,
+          "unit": "kWh",
+          "months": [5, 6, 7, 8, 9, 10],
+          "hours": "12:00-18:00 weekdays"
+        },
+        {
+          "season": "Summer",
+          "period": "Part-Peak",
+          "rate": 0.14561,
+          "unit": "kWh",
+          "months": [5, 6, 7, 8, 9, 10],
+          "hours": "8:30-12:00, 18:00-21:30 weekdays"
+        },
+        {
+          "season": "Summer",
+          "period": "Off-Peak",
+          "rate": 0.11432,
+          "unit": "kWh",
+          "months": [5, 6, 7, 8, 9, 10],
+          "hours": "21:30-8:30 weekdays, all day weekends/holidays"
+        },
+        {
+          "season": "Winter",
+          "period": "Part-Peak",
+          "rate": 0.13294,
+          "unit": "kWh",
+          "months": [11, 12, 1, 2, 3, 4],
+          "hours": "8:30-21:30 weekdays"
+        },
+        {
+          "season": "Winter",
+          "period": "Off-Peak",
+          "rate": 0.11145,
+          "unit": "kWh",
+          "months": [11, 12, 1, 2, 3, 4],
+          "hours": "21:30-8:30 weekdays, all day weekends/holidays"
+        }
+      ]
+    },
+    {
+      "label": "B-20 Primary General Demand-Metered TOU",
+      "uri": "https://openei.org/apps/USURDB/rate/view/5c6ea6205457a3454fcc88e7",
+      "sector": "Commercial",
+      "approved": true,
+      "effectiveDate": "2024-01-01",
+      "description": "Large commercial TOU rate for demands 1000+ kW, primary voltage",
+      "demandMin": 1000,
+      "demandMax": null,
+      "voltage": "Primary",
+      "fixedMonthlyCharge": 509.04,
+      "minMonthlyCharge": 509.04,
+      "demandRateStructure": [
+        {
+          "season": "Summer",
+          "period": "Peak Demand",
+          "rate": 23.85,
+          "unit": "kW",
+          "months": [5, 6, 7, 8, 9, 10],
+          "hours": "12:00-18:00 weekdays"
+        },
+        {
+          "season": "Summer",
+          "period": "Part-Peak Demand",
+          "rate": 6.63,
+          "unit": "kW",
+          "months": [5, 6, 7, 8, 9, 10],
+          "hours": "8:30-12:00, 18:00-21:30 weekdays"
+        },
+        {
+          "season": "Winter",
+          "period": "Part-Peak Demand",
+          "rate": 0.31,
+          "unit": "kW",
+          "months": [11, 12, 1, 2, 3, 4],
+          "hours": "8:30-21:30 weekdays"
+        },
+        {
+          "season": "All",
+          "period": "Max Demand",
+          "rate": 19.47,
+          "unit": "kW",
+          "months": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+          "hours": "all"
+        }
+      ],
+      "energyRateStructure": [
+        {
+          "season": "Summer",
+          "period": "Peak",
+          "rate": 0.17453,
+          "unit": "kWh",
+          "months": [5, 6, 7, 8, 9, 10],
+          "hours": "12:00-18:00 weekdays"
+        },
+        {
+          "season": "Summer",
+          "period": "Part-Peak",
+          "rate": 0.12821,
+          "unit": "kWh",
+          "months": [5, 6, 7, 8, 9, 10],
+          "hours": "8:30-12:00, 18:00-21:30 weekdays"
+        },
+        {
+          "season": "Summer",
+          "period": "Off-Peak",
+          "rate": 0.10071,
+          "unit": "kWh",
+          "months": [5, 6, 7, 8, 9, 10],
+          "hours": "21:30-8:30 weekdays, all day weekends/holidays"
+        },
+        {
+          "season": "Winter",
+          "period": "Part-Peak",
+          "rate": 0.11714,
+          "unit": "kWh",
+          "months": [11, 12, 1, 2, 3, 4],
+          "hours": "8:30-21:30 weekdays"
+        },
+        {
+          "season": "Winter",
+          "period": "Off-Peak",
+          "rate": 0.09817,
+          "unit": "kWh",
+          "months": [11, 12, 1, 2, 3, 4],
+          "hours": "21:30-8:30 weekdays, all day weekends/holidays"
+        }
+      ]
+    },
+    {
+      "label": "E-19 Medium General Demand-Metered TOU (Secondary)",
+      "uri": "https://openei.org/apps/USURDB/rate/view/5c6ea5fe5457a3454fcc86ff",
+      "sector": "Industrial",
+      "approved": true,
+      "effectiveDate": "2024-01-01",
+      "description": "Medium industrial TOU rate for demands 200-499 kW, secondary voltage",
+      "demandMin": 200,
+      "demandMax": 499,
+      "voltage": "Secondary",
+      "fixedMonthlyCharge": 284.16,
+      "minMonthlyCharge": 284.16,
+      "demandRateStructure": [
+        {
+          "season": "Summer",
+          "period": "Peak Demand",
+          "rate": 22.96,
+          "unit": "kW",
+          "months": [6, 7, 8, 9],
+          "hours": "12:00-18:00 weekdays"
+        },
+        {
+          "season": "Summer",
+          "period": "Max Demand",
+          "rate": 18.74,
+          "unit": "kW",
+          "months": [6, 7, 8, 9],
+          "hours": "all"
+        },
+        {
+          "season": "Winter",
+          "period": "Max Demand",
+          "rate": 18.74,
+          "unit": "kW",
+          "months": [10, 11, 12, 1, 2, 3, 4, 5],
+          "hours": "all"
+        }
+      ],
+      "energyRateStructure": [
+        {
+          "season": "Summer",
+          "period": "Peak",
+          "rate": 0.20547,
+          "unit": "kWh",
+          "months": [6, 7, 8, 9],
+          "hours": "12:00-18:00 weekdays"
+        },
+        {
+          "season": "Summer",
+          "period": "Part-Peak",
+          "rate": 0.15102,
+          "unit": "kWh",
+          "months": [6, 7, 8, 9],
+          "hours": "8:30-12:00, 18:00-21:30 weekdays"
+        },
+        {
+          "season": "Summer",
+          "period": "Off-Peak",
+          "rate": 0.11849,
+          "unit": "kWh",
+          "months": [6, 7, 8, 9],
+          "hours": "21:30-8:30 weekdays, all day weekends/holidays"
+        },
+        {
+          "season": "Winter",
+          "period": "Part-Peak",
+          "rate": 0.13782,
+          "unit": "kWh",
+          "months": [10, 11, 12, 1, 2, 3, 4, 5],
+          "hours": "8:30-21:30 weekdays"
+        },
+        {
+          "season": "Winter",
+          "period": "Off-Peak",
+          "rate": 0.11552,
+          "unit": "kWh",
+          "months": [10, 11, 12, 1, 2, 3, 4, 5],
+          "hours": "21:30-8:30 weekdays, all day weekends/holidays"
+        }
+      ]
+    },
+    {
+      "label": "A-10 TOU Medium General Service",
+      "uri": "https://openei.org/apps/USURDB/rate/view/5ca6c4145457a37625214a58",
+      "sector": "Commercial",
+      "approved": true,
+      "effectiveDate": "2024-01-01",
+      "description": "Medium commercial TOU rate for loads up to 200 kW (no demand charge)",
+      "demandMin": 0,
+      "demandMax": 200,
+      "fixedMonthlyCharge": 21.94,
+      "minMonthlyCharge": 21.94,
+      "demandRateStructure": [],
+      "energyRateStructure": [
+        {
+          "season": "Summer",
+          "period": "Peak",
+          "rate": 0.30256,
+          "unit": "kWh",
+          "months": [5, 6, 7, 8, 9, 10],
+          "hours": "12:00-18:00 weekdays",
+          "tier": 1,
+          "max": 700
+        },
+        {
+          "season": "Summer",
+          "period": "Peak",
+          "rate": 0.34528,
+          "unit": "kWh",
+          "months": [5, 6, 7, 8, 9, 10],
+          "hours": "12:00-18:00 weekdays",
+          "tier": 2,
+          "max": null
+        },
+        {
+          "season": "Summer",
+          "period": "Part-Peak",
+          "rate": 0.19843,
+          "unit": "kWh",
+          "months": [5, 6, 7, 8, 9, 10],
+          "hours": "8:30-12:00, 18:00-21:30 weekdays",
+          "tier": 1,
+          "max": 700
+        },
+        {
+          "season": "Summer",
+          "period": "Part-Peak",
+          "rate": 0.22671,
+          "unit": "kWh",
+          "months": [5, 6, 7, 8, 9, 10],
+          "hours": "8:30-12:00, 18:00-21:30 weekdays",
+          "tier": 2,
+          "max": null
+        },
+        {
+          "season": "Summer",
+          "period": "Off-Peak",
+          "rate": 0.16149,
+          "unit": "kWh",
+          "months": [5, 6, 7, 8, 9, 10],
+          "hours": "21:30-8:30 weekdays, all day weekends/holidays",
+          "tier": 1,
+          "max": 700
+        },
+        {
+          "season": "Summer",
+          "period": "Off-Peak",
+          "rate": 0.18442,
+          "unit": "kWh",
+          "months": [5, 6, 7, 8, 9, 10],
+          "hours": "21:30-8:30 weekdays, all day weekends/holidays",
+          "tier": 2,
+          "max": null
+        },
+        {
+          "season": "Winter",
+          "period": "Part-Peak",
+          "rate": 0.18574,
+          "unit": "kWh",
+          "months": [11, 12, 1, 2, 3, 4],
+          "hours": "8:30-21:30 weekdays",
+          "tier": 1,
+          "max": 700
+        },
+        {
+          "season": "Winter",
+          "period": "Part-Peak",
+          "rate": 0.21206,
+          "unit": "kWh",
+          "months": [11, 12, 1, 2, 3, 4],
+          "hours": "8:30-21:30 weekdays",
+          "tier": 2,
+          "max": null
+        },
+        {
+          "season": "Winter",
+          "period": "Off-Peak",
+          "rate": 0.15547,
+          "unit": "kWh",
+          "months": [11, 12, 1, 2, 3, 4],
+          "hours": "21:30-8:30 weekdays, all day weekends/holidays",
+          "tier": 1,
+          "max": 700
+        },
+        {
+          "season": "Winter",
+          "period": "Off-Peak",
+          "rate": 0.17753,
+          "unit": "kWh",
+          "months": [11, 12, 1, 2, 3, 4],
+          "hours": "21:30-8:30 weekdays, all day weekends/holidays",
+          "tier": 2,
+          "max": null
+        }
+      ]
+    },
+    {
+      "label": "BEV-1 Commercial EV Charging",
+      "uri": "https://openei.org/apps/USURDB/rate/view/5eb8d2825457a3124ce53f0a",
+      "sector": "Commercial",
+      "approved": true,
+      "effectiveDate": "2024-01-01",
+      "description": "Commercial EV charging TOU rate (applicable to BESS + EV charging)",
+      "demandMin": 0,
+      "demandMax": null,
+      "fixedMonthlyCharge": 8.37,
+      "minMonthlyCharge": 8.37,
+      "demandRateStructure": [
+        {
+          "season": "All",
+          "period": "Max Demand",
+          "rate": 17.11,
+          "unit": "kW",
+          "months": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+          "hours": "all"
+        }
+      ],
+      "energyRateStructure": [
+        {
+          "season": "Summer",
+          "period": "Peak",
+          "rate": 0.47638,
+          "unit": "kWh",
+          "months": [6, 7, 8, 9],
+          "hours": "15:00-20:00 weekdays"
+        },
+        {
+          "season": "Summer",
+          "period": "Off-Peak",
+          "rate": 0.19129,
+          "unit": "kWh",
+          "months": [6, 7, 8, 9],
+          "hours": "all other hours"
+        },
+        {
+          "season": "Winter",
+          "period": "Peak",
+          "rate": 0.28854,
+          "unit": "kWh",
+          "months": [1, 2, 3, 4, 5, 10, 11, 12],
+          "hours": "15:00-20:00 weekdays"
+        },
+        {
+          "season": "Winter",
+          "period": "Off-Peak",
+          "rate": 0.18248,
+          "unit": "kWh",
+          "months": [1, 2, 3, 4, 5, 10, 11, 12],
+          "hours": "all other hours"
+        }
+      ]
+    }
+  ]
+}

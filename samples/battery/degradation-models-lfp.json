@@ -1,0 +1,240 @@
+{
+  "$schema": "../../schemas/battery/degradation-model.schema.json",
+  "metadata": {
+    "chemistry": "LFP-Graphite",
+    "chemistry_full_name": "Lithium Iron Phosphate - Graphite",
+    "data_source": "NREL BLAST-Lite",
+    "source_url": "https://github.com/NREL/BLAST-Lite",
+    "model_version": "2024.1",
+    "last_updated": "2025-11-29",
+    "validation_status": "validated",
+    "confidence_level": "high",
+    "notes": "Primary model based on NREL BLAST-Lite with validation from peer-reviewed literature. Suitable for grid-scale BESS applications."
+  },
+  "chemistry_characteristics": {
+    "energy_density_wh_kg": 120,
+    "power_density_w_kg": 300,
+    "nominal_voltage": 3.2,
+    "typical_cycle_life": 4000,
+    "calendar_life_years": 15,
+    "safety_rating": "excellent",
+    "cost_relative": "low",
+    "temperature_sensitivity": "moderate"
+  },
+  "calendar_aging_model": {
+    "description": "Calendar aging reduces capacity over time due to SEI layer growth and electrolyte decomposition, primarily driven by temperature and SOC.",
+    "equation": "Q_loss_cal = alpha_cal * t^beta_cal * exp(-E_a_cal / (R*T)) * SOC^gamma_cal",
+    "parameters": {
+      "alpha_cal": {
+        "value": 0.025,
+        "unit": "dimensionless",
+        "description": "Calendar aging pre-exponential factor"
+      },
+      "beta_cal": {
+        "value": 0.5,
+        "unit": "dimensionless",
+        "description": "Time dependency exponent (square root of time)"
+      },
+      "E_a_cal": {
+        "value": 0.45,
+        "unit": "eV",
+        "description": "Calendar aging activation energy"
+      },
+      "gamma_cal": {
+        "value": 0.3,
+        "unit": "dimensionless",
+        "description": "SOC dependency exponent"
+      },
+      "R": {
+        "value": 8.617e-5,
+        "unit": "eV/K",
+        "description": "Boltzmann constant"
+      }
+    },
+    "reference_conditions": {
+      "temperature_C": 25,
+      "SOC": 0.5,
+      "capacity_fade_percent_per_year": 2.5
+    }
+  },
+  "cycle_aging_model": {
+    "description": "Cycle aging causes capacity fade through electrode particle cracking, lithium plating, and active material loss, dependent on DOD, temperature, and C-rate.",
+    "equation": "Q_loss_cyc = alpha_cyc * N^beta_cyc * exp(-E_a_cyc / (R*T)) * DOD^gamma_cyc",
+    "parameters": {
+      "alpha_cyc": {
+        "value": 0.015,
+        "unit": "dimensionless",
+        "description": "Cycle aging pre-exponential factor"
+      },
+      "beta_cyc": {
+        "value": 0.52,
+        "unit": "dimensionless",
+        "description": "Cycle count dependency exponent"
+      },
+      "E_a_cyc": {
+        "value": 0.35,
+        "unit": "eV",
+        "description": "Cycle aging activation energy"
+      },
+      "gamma_cyc": {
+        "value": 0.8,
+        "unit": "dimensionless",
+        "description": "DOD dependency exponent"
+      }
+    },
+    "reference_conditions": {
+      "temperature_C": 25,
+      "DOD": 0.8,
+      "C_rate": 0.5,
+      "cycles_to_80_percent_SOH": 4000
+    }
+  },
+  "operating_conditions": {
+    "temperature_range": {
+      "min_C": -20,
+      "optimal_C": 25,
+      "max_C": 60,
+      "notes": "Performance degrades rapidly below 0°C and above 45°C"
+    },
+    "SOC_recommendations": {
+      "storage_min": 0.3,
+      "storage_max": 0.6,
+      "operating_min": 0.1,
+      "operating_max": 0.9,
+      "notes": "Avoid long-term storage at >80% or <20% SOC"
+    },
+    "C_rate_limits": {
+      "charge_max": 1.0,
+      "discharge_max": 2.0,
+      "optimal_charge": 0.5,
+      "optimal_discharge": 0.5
+    }
+  },
+  "degradation_curves": {
+    "calendar_aging_10_years": {
+      "description": "Calendar aging at 25°C for different SOC levels over 10 years",
+      "unit": "percent_capacity_remaining",
+      "temperature_C": 25,
+      "data": [
+        {
+          "SOC": 0.0,
+          "years": [0, 1, 2, 5, 10],
+          "capacity_percent": [100, 98.5, 97.2, 93.5, 87.5]
+        },
+        {
+          "SOC": 0.5,
+          "years": [0, 1, 2, 5, 10],
+          "capacity_percent": [100, 97.5, 95.5, 89.0, 80.0]
+        },
+        {
+          "SOC": 1.0,
+          "years": [0, 1, 2, 5, 10],
+          "capacity_percent": [100, 96.0, 92.5, 82.0, 68.0]
+        }
+      ]
+    },
+    "calendar_aging_temperature": {
+      "description": "Calendar aging at 50% SOC for different temperatures over 10 years",
+      "unit": "percent_capacity_remaining",
+      "SOC": 0.5,
+      "data": [
+        {
+          "temperature_C": 0,
+          "years": [0, 1, 2, 5, 10],
+          "capacity_percent": [100, 99.2, 98.5, 96.5, 93.0]
+        },
+        {
+          "temperature_C": 25,
+          "years": [0, 1, 2, 5, 10],
+          "capacity_percent": [100, 97.5, 95.5, 89.0, 80.0]
+        },
+        {
+          "temperature_C": 45,
+          "years": [0, 1, 2, 5, 10],
+          "capacity_percent": [100, 95.0, 91.0, 79.0, 64.0]
+        }
+      ]
+    },
+    "cycle_aging_4000_cycles": {
+      "description": "Cycle aging at 25°C for different DOD levels",
+      "unit": "percent_capacity_remaining",
+      "temperature_C": 25,
+      "C_rate": 0.5,
+      "data": [
+        {
+          "DOD": 0.2,
+          "cycles": [0, 500, 1000, 2000, 4000],
+          "capacity_percent": [100, 98.5, 97.0, 94.5, 89.5]
+        },
+        {
+          "DOD": 0.5,
+          "cycles": [0, 500, 1000, 2000, 4000],
+          "capacity_percent": [100, 97.0, 94.5, 89.5, 80.5]
+        },
+        {
+          "DOD": 1.0,
+          "cycles": [0, 500, 1000, 2000, 4000],
+          "capacity_percent": [100, 95.0, 90.5, 82.0, 68.0]
+        }
+      ]
+    }
+  },
+  "typical_applications": [
+    "Grid-scale energy storage",
+    "Residential BESS",
+    "Commercial & industrial BESS",
+    "Frequency regulation",
+    "Peak shaving",
+    "Solar + storage"
+  ],
+  "example_cells": [
+    {
+      "manufacturer": "Sony Murata",
+      "model": "250Ah Prismatic",
+      "capacity_ah": 250,
+      "format": "prismatic",
+      "nominal_voltage": 3.2,
+      "blast_lite_model": "Lfp_Gr_250AhPrismatic"
+    },
+    {
+      "manufacturer": "CATL",
+      "model": "280Ah Prismatic",
+      "capacity_ah": 280,
+      "format": "prismatic",
+      "nominal_voltage": 3.2,
+      "notes": "Common in grid storage, similar degradation to Sony Murata"
+    }
+  ],
+  "model_accuracy": {
+    "capacity_fade_rms_error_percent": 1.4,
+    "resistance_growth_rms_error_percent": 15,
+    "validation_conditions": "9 aging test conditions from 0°C to 55°C",
+    "confidence_interval_percent": 90,
+    "extrapolation_uncertainty_10_years": "±10-15%"
+  },
+  "warranty_implications": {
+    "typical_warranty_years": 10,
+    "typical_warranty_cycles": 6000,
+    "typical_warranty_capacity_percent": 70,
+    "notes": "LFP often exceeds warranty specifications. Real-world degradation typically 10-20% better than modeled."
+  },
+  "references": [
+    {
+      "source": "NREL BLAST-Lite",
+      "url": "https://github.com/NREL/BLAST-Lite",
+      "type": "software"
+    },
+    {
+      "source": "Semi-empirical ageing model for LFP and NMC Li-ion battery chemistries",
+      "journal": "Journal of Energy Storage",
+      "year": 2023,
+      "type": "peer_reviewed"
+    },
+    {
+      "source": "Life Prediction Model for Grid-Connected Li-ion Battery Energy Storage System",
+      "reference": "NREL/TP-5400-67102",
+      "year": 2017,
+      "type": "technical_report"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "utility": "Anaheim Public Utilities",
+  "utilityAbbrev": "Anaheim",
+  "eiaid": 579,
+  "state": "CA",
+  "dataSource": "OpenEI URDB",
+  "dataSourceUrl": "https://apps.openei.org/USURDB/",
+  "lastVerified": "2025-11-29",
+  "notes": "Sample rate structures for commercial BESS modeling. Anaheim is a municipal utility in Orange County.",
+  "rates": [
+    {
+      "label": "C-2 Commercial TOU",
+      "uri": "https://openei.org/apps/USURDB/rate/view/5c6ea4d85457a3454fcc7e52",
+      "sector": "Commercial",
+      "approved": true,
+      "effectiveDate": "2024-01-01",
+      "description": "Commercial TOU rate for medium loads",
+      "demandMin": 20,
+      "demandMax": 500,
+      "fixedMonthlyCharge": 95.00,
+      "demandRateStructure": [
+        {
+          "season": "Summer",
+          "period": "Max Demand",
+          "rate": 14.25,
+          "unit": "kW",
+          "months": [6, 7, 8, 9],
+          "hours": "all"
+        },
+        {
+          "season": "Winter",
+          "period": "Max Demand",
+          "rate": 10.85,
+          "unit": "kW",
+          "months": [1, 2, 3, 4, 5, 10, 11, 12],
+          "hours": "all"
+        }
+      ],
+      "energyRateStructure": [
+        {
+          "season": "Summer",
+          "period": "On-Peak",
+          "rate": 0.18254,
+          "unit": "kWh",
+          "months": [6, 7, 8, 9],
+          "hours": "12:00-20:00 weekdays"
+        },
+        {
+          "season": "Summer",
+          "period": "Off-Peak",
+          "rate": 0.11254,
+          "unit": "kWh",
+          "months": [6, 7, 8, 9],
+          "hours": "20:00-12:00 weekdays, all day weekends/holidays"
+        },
+        {
+          "season": "Winter",
+          "period": "On-Peak",
+          "rate": 0.14254,
+          "unit": "kWh",
+          "months": [1, 2, 3, 4, 5, 10, 11, 12],
+          "hours": "12:00-20:00 weekdays"
+        },
+        {
+          "season": "Winter",
+          "period": "Off-Peak",
+          "rate": 0.10254,
+          "unit": "kWh",
+          "months": [1, 2, 3, 4, 5, 10, 11, 12],
+          "hours": "20:00-12:00 weekdays, all day weekends/holidays"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "utility": "San Diego Gas & Electric",
+  "utilityAbbrev": "SDGE",
+  "eiaid": 16609,
+  "state": "CA",
+  "dataSource": "OpenEI URDB",
+  "dataSourceUrl": "https://apps.openei.org/USURDB/",
+  "lastVerified": "2025-11-29",
+  "notes": "Sample rate structures for commercial/industrial BESS modeling. SDGE serves southern California.",
+  "rates": [
+    {
+      "label": "AL-TOU Large Commercial & Industrial",
+      "uri": "https://openei.org/apps/USURDB/rate/view/5c6ea8c25457a3454fcca62a",
+      "sector": "Industrial",
+      "approved": true,
+      "effectiveDate": "2024-01-01",
+      "description": "Large C&I TOU rate for demands 500+ kW",
+      "demandMin": 500,
+      "demandMax": null,
+      "fixedMonthlyCharge": 365.00,
+      "demandRateStructure": [
+        {
+          "season": "Summer",
+          "period": "On-Peak Demand",
+          "rate": 26.54,
+          "unit": "kW",
+          "months": [5, 6, 7, 8, 9, 10],
+          "hours": "16:00-21:00 weekdays"
+        },
+        {
+          "season": "Summer",
+          "period": "Max Demand",
+          "rate": 15.23,
+          "unit": "kW",
+          "months": [5, 6, 7, 8, 9, 10],
+          "hours": "all"
+        },
+        {
+          "season": "Winter",
+          "period": "Max Demand",
+          "rate": 12.45,
+          "unit": "kW",
+          "months": [1, 2, 3, 4, 11, 12],
+          "hours": "all"
+        }
+      ],
+      "energyRateStructure": [
+        {
+          "season": "Summer",
+          "period": "On-Peak",
+          "rate": 0.21548,
+          "unit": "kWh",
+          "months": [5, 6, 7, 8, 9, 10],
+          "hours": "16:00-21:00 weekdays"
+        },
+        {
+          "season": "Summer",
+          "period": "Off-Peak",
+          "rate": 0.10254,
+          "unit": "kWh",
+          "months": [5, 6, 7, 8, 9, 10],
+          "hours": "all other hours"
+        },
+        {
+          "season": "Winter",
+          "period": "On-Peak",
+          "rate": 0.14658,
+          "unit": "kWh",
+          "months": [1, 2, 3, 4, 11, 12],
+          "hours": "16:00-21:00 weekdays"
+        },
+        {
+          "season": "Winter",
+          "period": "Off-Peak",
+          "rate": 0.09124,
+          "unit": "kWh",
+          "months": [1, 2, 3, 4, 11, 12],
+          "hours": "all other hours"
+        }
+      ]
+    },
+    {
+      "label": "DG-R Distributed Generation",
+      "uri": "https://openei.org/apps/USURDB/rate/view/5e5c8d425457a34e5ce84f2a",
+      "sector": "Commercial",
+      "approved": true,
+      "effectiveDate": "2024-01-01",
+      "description": "Net metering rate for distributed generation + storage",
+      "demandMin": 0,
+      "demandMax": 500,
+      "fixedMonthlyCharge": 180.00,
+      "demandRateStructure": [
+        {
+          "season": "Summer",
+          "period": "Max Demand",
+          "rate": 19.85,
+          "unit": "kW",
+          "months": [5, 6, 7, 8, 9, 10],
+          "hours": "all"
+        },
+        {
+          "season": "Winter",
+          "period": "Max Demand",
+          "rate": 15.42,
+          "unit": "kW",
+          "months": [1, 2, 3, 4, 11, 12],
+          "hours": "all"
+        }
+      ],
+      "energyRateStructure": [
+        {
+          "season": "Summer",
+          "period": "On-Peak",
+          "rate": 0.28654,
+          "unit": "kWh",
+          "months": [5, 6, 7, 8, 9, 10],
+          "hours": "16:00-21:00 weekdays"
+        },
+        {
+          "season": "Summer",
+          "period": "Off-Peak",
+          "rate": 0.13254,
+          "unit": "kWh",
+          "months": [5, 6, 7, 8, 9, 10],
+          "hours": "all other hours"
+        },
+        {
+          "season": "Winter",
+          "period": "On-Peak",
+          "rate": 0.18254,
+          "unit": "kWh",
+          "months": [1, 2, 3, 4, 11, 12],
+          "hours": "16:00-21:00 weekdays"
+        },
+        {
+          "season": "Winter",
+          "period": "Off-Peak",
+          "rate": 0.11658,
+          "unit": "kWh",
+          "months": [1, 2, 3, 4, 11, 12],
+          "hours": "all other hours"
+        }
+      ],
+      "netMetering": {
+        "enabled": true,
+        "exportRate": "TOU-based",
+        "billingPeriod": "monthly",
+        "notes": "NEM 3.0 rules apply for new interconnections"
+      }
+    }
+  ]
+}

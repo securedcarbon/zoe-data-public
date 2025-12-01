@@ -1,0 +1,35 @@
+{
+  "utility": "Marin Clean Energy",
+  "utilityAbbrev": "MCE",
+  "eiaid": null,
+  "state": "CA",
+  "dataSource": "OpenEI URDB",
+  "dataSourceUrl": "https://apps.openei.org/USURDB/",
+  "lastVerified": "2025-11-29",
+  "notes": "Sample rate structures for CCA generation rates. MCE was California's first CCA (launched 2010). Delivery charges from PG&E apply separately.",
+  "rates": [
+    {
+      "label": "MCE Light Green Commercial",
+      "uri": "https://openei.org/apps/USURDB/rate/view/5e4c9d325457a35e6cb74a8e",
+      "sector": "Commercial",
+      "approved": true,
+      "effectiveDate": "2024-01-01",
+      "description": "60% renewable energy generation rate (delivery charges separate via PG&E)",
+      "demandMin": 0,
+      "demandMax": null,
+      "fixedMonthlyCharge": 0.00,
+      "demandRateStructure": [],
+      "energyRateStructure": [
+        {
+          "season": "All",
+          "period": "Generation",
+          "rate": 0.07854,
+          "unit": "kWh",
+          "months": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+          "hours": "all"
+        }
+      ],
+      "notes": "This is generation-only rate. Add PG&E delivery charges for total cost."
+    }
+  ]
+}

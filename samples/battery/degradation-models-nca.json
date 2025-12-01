@@ -1,0 +1,283 @@
+{
+  "$schema": "../../schemas/battery/degradation-model.schema.json",
+  "metadata": {
+    "chemistry": "NCA-Gr",
+    "chemistry_full_name": "Nickel Cobalt Aluminum - Graphite",
+    "data_source": "NREL BLAST-Lite",
+    "source_url": "https://github.com/NREL/BLAST-Lite",
+    "model_version": "2024.1",
+    "last_updated": "2025-11-29",
+    "validation_status": "validated",
+    "confidence_level": "high",
+    "notes": "NCA chemistry used in Tesla vehicles (Panasonic cells). High energy density with good thermal stability. Degradation characteristics similar to NMC811."
+  },
+  "chemistry_characteristics": {
+    "energy_density_wh_kg": 260,
+    "power_density_w_kg": 450,
+    "nominal_voltage": 3.6,
+    "typical_cycle_life": 1500,
+    "calendar_life_years": 10,
+    "safety_rating": "good",
+    "cost_relative": "high",
+    "temperature_sensitivity": "moderate-high"
+  },
+  "calendar_aging_model": {
+    "description": "NCA calendar aging is driven by SEI growth and electrolyte decomposition. Better thermal stability than NMC but still sensitive to high SOC.",
+    "equation": "Q_loss_cal = alpha_cal * t^beta_cal * exp(-E_a_cal / (R*T)) * SOC^gamma_cal",
+    "parameters": {
+      "alpha_cal": {
+        "value": 0.038,
+        "unit": "dimensionless",
+        "description": "Calendar aging pre-exponential factor (highest among Li-ion chemistries)"
+      },
+      "beta_cal": {
+        "value": 0.5,
+        "unit": "dimensionless",
+        "description": "Time dependency exponent (square root of time)"
+      },
+      "E_a_cal": {
+        "value": 0.58,
+        "unit": "eV",
+        "description": "Calendar aging activation energy"
+      },
+      "gamma_cal": {
+        "value": 0.45,
+        "unit": "dimensionless",
+        "description": "SOC dependency exponent"
+      },
+      "R": {
+        "value": 8.617e-5,
+        "unit": "eV/K",
+        "description": "Boltzmann constant"
+      }
+    },
+    "reference_conditions": {
+      "temperature_C": 25,
+      "SOC": 0.5,
+      "capacity_fade_percent_per_year": 4.5
+    }
+  },
+  "cycle_aging_model": {
+    "description": "NCA cycle aging occurs through particle fracture and loss of electrical contact. Fast charge rates accelerate degradation.",
+    "equation": "Q_loss_cyc = alpha_cyc * N^beta_cyc * exp(-E_a_cyc / (R*T)) * DOD^gamma_cyc",
+    "parameters": {
+      "alpha_cyc": {
+        "value": 0.03,
+        "unit": "dimensionless",
+        "description": "Cycle aging pre-exponential factor"
+      },
+      "beta_cyc": {
+        "value": 0.58,
+        "unit": "dimensionless",
+        "description": "Cycle count dependency exponent"
+      },
+      "E_a_cyc": {
+        "value": 0.42,
+        "unit": "eV",
+        "description": "Cycle aging activation energy"
+      },
+      "gamma_cyc": {
+        "value": 0.95,
+        "unit": "dimensionless",
+        "description": "DOD dependency exponent"
+      }
+    },
+    "reference_conditions": {
+      "temperature_C": 25,
+      "DOD": 0.8,
+      "C_rate": 0.5,
+      "cycles_to_80_percent_SOH": 1500
+    }
+  },
+  "operating_conditions": {
+    "temperature_range": {
+      "min_C": -20,
+      "optimal_C": 22,
+      "max_C": 55,
+      "notes": "Good thermal stability but degradation accelerates above 35°C"
+    },
+    "SOC_recommendations": {
+      "storage_min": 0.3,
+      "storage_max": 0.5,
+      "operating_min": 0.05,
+      "operating_max": 0.9,
+      "notes": "Tesla recommends 50% SOC for long-term storage. Avoid >90% SOC unless needed."
+    },
+    "C_rate_limits": {
+      "charge_max": 2.0,
+      "discharge_max": 4.0,
+      "optimal_charge": 0.7,
+      "optimal_discharge": 1.0
+    }
+  },
+  "degradation_curves": {
+    "calendar_aging_10_years": {
+      "description": "Calendar aging at 25°C for different SOC levels over 10 years",
+      "unit": "percent_capacity_remaining",
+      "temperature_C": 25,
+      "data": [
+        {
+          "SOC": 0.0,
+          "years": [0, 1, 2, 5, 10],
+          "capacity_percent": [100, 97.0, 94.5, 87.5, 78.0]
+        },
+        {
+          "SOC": 0.5,
+          "years": [0, 1, 2, 5, 10],
+          "capacity_percent": [100, 95.5, 91.5, 81.0, 66.0]
+        },
+        {
+          "SOC": 1.0,
+          "years": [0, 1, 2, 5, 10],
+          "capacity_percent": [100, 92.0, 85.5, 70.0, 52.0]
+        }
+      ]
+    },
+    "calendar_aging_temperature": {
+      "description": "Calendar aging at 50% SOC for different temperatures over 10 years",
+      "unit": "percent_capacity_remaining",
+      "SOC": 0.5,
+      "data": [
+        {
+          "temperature_C": 0,
+          "years": [0, 1, 2, 5, 10],
+          "capacity_percent": [100, 98.2, 96.8, 92.5, 86.0]
+        },
+        {
+          "temperature_C": 25,
+          "years": [0, 1, 2, 5, 10],
+          "capacity_percent": [100, 95.5, 91.5, 81.0, 66.0]
+        },
+        {
+          "temperature_C": 45,
+          "years": [0, 1, 2, 5, 10],
+          "capacity_percent": [100, 90.0, 82.5, 64.0, 45.0]
+        }
+      ]
+    },
+    "cycle_aging_2000_cycles": {
+      "description": "Cycle aging at 25°C for different DOD levels",
+      "unit": "percent_capacity_remaining",
+      "temperature_C": 25,
+      "C_rate": 0.5,
+      "data": [
+        {
+          "DOD": 0.2,
+          "cycles": [0, 500, 1000, 1500, 2000],
+          "capacity_percent": [100, 96.5, 93.5, 90.5, 87.5]
+        },
+        {
+          "DOD": 0.5,
+          "cycles": [0, 500, 1000, 1500, 2000],
+          "capacity_percent": [100, 94.0, 88.5, 83.5, 79.0]
+        },
+        {
+          "DOD": 1.0,
+          "cycles": [0, 500, 1000, 1500, 2000],
+          "capacity_percent": [100, 90.0, 81.5, 74.0, 67.0]
+        }
+      ]
+    }
+  },
+  "typical_applications": [
+    "Electric vehicles (Tesla)",
+    "High-performance BESS",
+    "Aerospace applications",
+    "Premium consumer electronics",
+    "Applications requiring high power density"
+  ],
+  "example_cells": [
+    {
+      "manufacturer": "Panasonic",
+      "model": "NCR18650B",
+      "capacity_ah": 3.4,
+      "format": "18650",
+      "nominal_voltage": 3.6,
+      "blast_lite_model": "Nca_Gr_Panasonic3Ah",
+      "notes": "Widely used in Tesla Model S/X (earlier generations)"
+    },
+    {
+      "manufacturer": "Panasonic",
+      "model": "NCR21700A",
+      "capacity_ah": 5.0,
+      "format": "21700",
+      "nominal_voltage": 3.6,
+      "blast_lite_model": "Nca_Gr_Panasonic21700",
+      "notes": "Used in Tesla Model 3/Y"
+    },
+    {
+      "manufacturer": "Sony Murata",
+      "model": "US18650VTC6",
+      "capacity_ah": 3.0,
+      "format": "18650",
+      "nominal_voltage": 3.6,
+      "notes": "High power variant, excellent for high C-rate applications"
+    }
+  ],
+  "model_accuracy": {
+    "capacity_fade_rms_error_percent": 2.2,
+    "resistance_growth_rms_error_percent": 16,
+    "validation_conditions": "Multiple aging test conditions, Panasonic cell data",
+    "confidence_interval_percent": 90,
+    "extrapolation_uncertainty_10_years": "±15-20%",
+    "notes": "Good data from Tesla/Panasonic partnership. Field data from EVs provides validation."
+  },
+  "warranty_implications": {
+    "typical_warranty_years": 8,
+    "typical_warranty_cycles": 2500,
+    "typical_warranty_capacity_percent": 70,
+    "notes": "Tesla EV warranties: 8 years, 70% capacity retention. Real-world data shows many vehicles exceed warranty specs."
+  },
+  "real_world_performance": {
+    "tesla_fleet_data": {
+      "average_degradation_per_year": 2.3,
+      "degradation_at_100k_miles": 8,
+      "degradation_at_200k_miles": 12,
+      "notes": "Based on crowdsourced Tesla fleet data. Many vehicles >90% capacity at 8 years."
+    },
+    "thermal_management_impact": {
+      "with_active_cooling": "Expected degradation as modeled",
+      "without_active_cooling": "20-40% faster degradation in hot climates",
+      "notes": "Thermal management is critical for NCA longevity"
+    }
+  },
+  "risk_factors": {
+    "high_soc_storage": "critical",
+    "high_temperature": "critical",
+    "deep_cycling": "moderate",
+    "fast_charging": "moderate-high",
+    "notes": "Fast charging (>1.5C) can accelerate degradation. Limit to 0.7C for optimal lifespan."
+  },
+  "comparison_to_nmc": {
+    "energy_density": "Higher (+5-10%)",
+    "cycle_life": "Lower (-25%)",
+    "thermal_stability": "Better",
+    "cost": "Higher",
+    "calendar_aging": "Faster",
+    "power_capability": "Better",
+    "notes": "NCA excels in power applications and thermal stability. NMC better for cycle life."
+  },
+  "references": [
+    {
+      "source": "NREL BLAST-Lite",
+      "url": "https://github.com/NREL/BLAST-Lite",
+      "type": "software"
+    },
+    {
+      "source": "Panasonic NCA Cell Aging Data",
+      "type": "manufacturer_data",
+      "notes": "Publicly available through NREL collaborations"
+    },
+    {
+      "source": "Tesla Battery Degradation Research",
+      "type": "field_data",
+      "notes": "Crowdsourced data from Tesla vehicle fleet"
+    },
+    {
+      "source": "Calendar Aging of Lithium-Ion Batteries",
+      "journal": "Journal of The Electrochemical Society",
+      "year": 2016,
+      "type": "peer_reviewed"
+    }
+  ]
+}

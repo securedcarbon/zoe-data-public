@@ -1,0 +1,35 @@
+{
+  "utility": "Silicon Valley Clean Energy",
+  "utilityAbbrev": "SVCE",
+  "eiaid": null,
+  "state": "CA",
+  "dataSource": "OpenEI URDB",
+  "dataSourceUrl": "https://apps.openei.org/USURDB/",
+  "lastVerified": "2025-11-29",
+  "notes": "Sample rate structures for CCA generation rates. SVCE is a Community Choice Aggregator (launched 2017). Delivery charges from PG&E apply separately.",
+  "rates": [
+    {
+      "label": "SVCE GreenPrime Commercial",
+      "uri": "https://openei.org/apps/USURDB/rate/view/5f8e7d425457a34e7ca85b2c",
+      "sector": "Commercial",
+      "approved": true,
+      "effectiveDate": "2024-01-01",
+      "description": "100% renewable energy generation rate (delivery charges separate via PG&E)",
+      "demandMin": 0,
+      "demandMax": null,
+      "fixedMonthlyCharge": 0.00,
+      "demandRateStructure": [],
+      "energyRateStructure": [
+        {
+          "season": "All",
+          "period": "Generation",
+          "rate": 0.08254,
+          "unit": "kWh",
+          "months": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+          "hours": "all"
+        }
+      ],
+      "notes": "This is generation-only rate. Add PG&E delivery charges (B-19, B-20, etc.) for total cost."
+    }
+  ]
+}

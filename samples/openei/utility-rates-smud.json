@@ -1,0 +1,121 @@
+{
+  "utility": "Sacramento Municipal Utility District",
+  "utilityAbbrev": "SMUD",
+  "eiaid": 16534,
+  "state": "CA",
+  "dataSource": "OpenEI URDB",
+  "dataSourceUrl": "https://apps.openei.org/USURDB/",
+  "lastVerified": "2025-11-29",
+  "notes": "Sample rate structures for commercial BESS modeling. SMUD is a municipal utility serving Sacramento area.",
+  "rates": [
+    {
+      "label": "GS-TOU1 General Service TOU Small",
+      "uri": "https://openei.org/apps/USURDB/rate/view/5d3b8e425457a32e5cb64f8a",
+      "sector": "Commercial",
+      "approved": true,
+      "effectiveDate": "2024-01-01",
+      "description": "Small commercial TOU rate for loads up to 50 kW",
+      "demandMin": 0,
+      "demandMax": 50,
+      "fixedMonthlyCharge": 45.00,
+      "demandRateStructure": [],
+      "energyRateStructure": [
+        {
+          "season": "Summer",
+          "period": "On-Peak",
+          "rate": 0.24658,
+          "unit": "kWh",
+          "months": [6, 7, 8, 9],
+          "hours": "16:00-20:00 weekdays"
+        },
+        {
+          "season": "Summer",
+          "period": "Off-Peak",
+          "rate": 0.14254,
+          "unit": "kWh",
+          "months": [6, 7, 8, 9],
+          "hours": "all other hours"
+        },
+        {
+          "season": "Winter",
+          "period": "On-Peak",
+          "rate": 0.16854,
+          "unit": "kWh",
+          "months": [1, 2, 3, 4, 5, 10, 11, 12],
+          "hours": "16:00-20:00 weekdays"
+        },
+        {
+          "season": "Winter",
+          "period": "Off-Peak",
+          "rate": 0.12658,
+          "unit": "kWh",
+          "months": [1, 2, 3, 4, 5, 10, 11, 12],
+          "hours": "all other hours"
+        }
+      ]
+    },
+    {
+      "label": "GS-TOU2 General Service TOU Large",
+      "uri": "https://openei.org/apps/USURDB/rate/view/5d3b8e435457a32e5cb64f9c",
+      "sector": "Commercial",
+      "approved": true,
+      "effectiveDate": "2024-01-01",
+      "description": "Large commercial TOU rate for demands 50-500 kW",
+      "demandMin": 50,
+      "demandMax": 500,
+      "fixedMonthlyCharge": 185.00,
+      "demandRateStructure": [
+        {
+          "season": "Summer",
+          "period": "Max Demand",
+          "rate": 16.85,
+          "unit": "kW",
+          "months": [6, 7, 8, 9],
+          "hours": "all"
+        },
+        {
+          "season": "Winter",
+          "period": "Max Demand",
+          "rate": 12.45,
+          "unit": "kW",
+          "months": [1, 2, 3, 4, 5, 10, 11, 12],
+          "hours": "all"
+        }
+      ],
+      "energyRateStructure": [
+        {
+          "season": "Summer",
+          "period": "On-Peak",
+          "rate": 0.19854,
+          "unit": "kWh",
+          "months": [6, 7, 8, 9],
+          "hours": "16:00-20:00 weekdays"
+        },
+        {
+          "season": "Summer",
+          "period": "Off-Peak",
+          "rate": 0.11254,
+          "unit": "kWh",
+          "months": [6, 7, 8, 9],
+          "hours": "all other hours"
+        },
+        {
+          "season": "Winter",
+          "period": "On-Peak",
+          "rate": 0.14254,
+          "unit": "kWh",
+          "months": [1, 2, 3, 4, 5, 10, 11, 12],
+          "hours": "16:00-20:00 weekdays"
+        },
+        {
+          "season": "Winter",
+          "period": "Off-Peak",
+          "rate": 0.09854,
+          "unit": "kWh",
+          "months": [1, 2, 3, 4, 5, 10, 11, 12],
+          "hours": "all other hours"
+        }
+      ]
+    }
+  ]
+}

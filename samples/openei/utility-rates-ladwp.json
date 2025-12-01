@@ -1,0 +1,153 @@
+{
+  "utility": "Los Angeles Department of Water and Power",
+  "utilityAbbrev": "LADWP",
+  "eiaid": 11208,
+  "state": "CA",
+  "dataSource": "OpenEI URDB",
+  "dataSourceUrl": "https://apps.openei.org/USURDB/",
+  "lastVerified": "2025-11-29",
+  "notes": "Sample rate structures for commercial BESS modeling. LADWP is largest municipal utility in the US.",
+  "rates": [
+    {
+      "label": "A-2 Small General Service TOU",
+      "uri": "https://openei.org/apps/USURDB/rate/view/5c6ea5a25457a3454fcc8254",
+      "sector": "Commercial",
+      "approved": true,
+      "effectiveDate": "2024-01-01",
+      "description": "Small commercial TOU rate for demands up to 30 kW",
+      "demandMin": 0,
+      "demandMax": 30,
+      "fixedMonthlyCharge": 22.50,
+      "demandRateStructure": [],
+      "energyRateStructure": [
+        {
+          "season": "Summer",
+          "period": "High Peak",
+          "rate": 0.28654,
+          "unit": "kWh",
+          "months": [6, 7, 8, 9],
+          "hours": "10:00-18:00 weekdays"
+        },
+        {
+          "season": "Summer",
+          "period": "Low Peak",
+          "rate": 0.14854,
+          "unit": "kWh",
+          "months": [6, 7, 8, 9],
+          "hours": "8:00-10:00, 18:00-23:00 weekdays"
+        },
+        {
+          "season": "Summer",
+          "period": "Base",
+          "rate": 0.11254,
+          "unit": "kWh",
+          "months": [6, 7, 8, 9],
+          "hours": "23:00-8:00 weekdays, all day weekends/holidays"
+        },
+        {
+          "season": "Winter",
+          "period": "High Peak",
+          "rate": 0.18254,
+          "unit": "kWh",
+          "months": [1, 2, 3, 4, 5, 10, 11, 12],
+          "hours": "10:00-18:00 weekdays"
+        },
+        {
+          "season": "Winter",
+          "period": "Low Peak",
+          "rate": 0.13254,
+          "unit": "kWh",
+          "months": [1, 2, 3, 4, 5, 10, 11, 12],
+          "hours": "8:00-10:00, 18:00-23:00 weekdays"
+        },
+        {
+          "season": "Winter",
+          "period": "Base",
+          "rate": 0.10254,
+          "unit": "kWh",
+          "months": [1, 2, 3, 4, 5, 10, 11, 12],
+          "hours": "23:00-8:00 weekdays, all day weekends/holidays"
+        }
+      ]
+    },
+    {
+      "label": "A-3 Large General Service Demand",
+      "uri": "https://openei.org/apps/USURDB/rate/view/5c6ea5a35457a3454fcc8268",
+      "sector": "Commercial",
+      "approved": true,
+      "effectiveDate": "2024-01-01",
+      "description": "Large commercial demand rate for loads 30+ kW",
+      "demandMin": 30,
+      "demandMax": null,
+      "fixedMonthlyCharge": 165.00,
+      "demandRateStructure": [
+        {
+          "season": "Summer",
+          "period": "Max Demand",
+          "rate": 17.54,
+          "unit": "kW",
+          "months": [6, 7, 8, 9],
+          "hours": "all"
+        },
+        {
+          "season": "Winter",
+          "period": "Max Demand",
+          "rate": 13.24,
+          "unit": "kW",
+          "months": [1, 2, 3, 4, 5, 10, 11, 12],
+          "hours": "all"
+        }
+      ],
+      "energyRateStructure": [
+        {
+          "season": "Summer",
+          "period": "High Peak",
+          "rate": 0.21854,
+          "unit": "kWh",
+          "months": [6, 7, 8, 9],
+          "hours": "10:00-18:00 weekdays"
+        },
+        {
+          "season": "Summer",
+          "period": "Low Peak",
+          "rate": 0.13254,
+          "unit": "kWh",
+          "months": [6, 7, 8, 9],
+          "hours": "8:00-10:00, 18:00-23:00 weekdays"
+        },
+        {
+          "season": "Summer",
+          "period": "Base",
+          "rate": 0.09254,
+          "unit": "kWh",
+          "months": [6, 7, 8, 9],
+          "hours": "23:00-8:00 weekdays, all day weekends/holidays"
+        },
+        {
+          "season": "Winter",
+          "period": "High Peak",
+          "rate": 0.15254,
+          "unit": "kWh",
+          "months": [1, 2, 3, 4, 5, 10, 11, 12],
+          "hours": "10:00-18:00 weekdays"
+        },
+        {
+          "season": "Winter",
+          "period": "Low Peak",
+          "rate": 0.11254,
+          "unit": "kWh",
+          "months": [1, 2, 3, 4, 5, 10, 11, 12],
+          "hours": "8:00-10:00, 18:00-23:00 weekdays"
+        },
+        {
+          "season": "Winter",
+          "period": "Base",
+          "rate": 0.08254,
+          "unit": "kWh",
+          "months": [1, 2, 3, 4, 5, 10, 11, 12],
+          "hours": "23:00-8:00 weekdays, all day weekends/holidays"
+        }
+      ]
+    }
+  ]
+}

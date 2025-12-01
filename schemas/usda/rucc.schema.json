@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://zoe-data.securedcarbon.com/schemas/usda/rucc.schema.json",
+  "title": "USDA Rural-Urban Continuum Codes",
+  "description": "County-level rural-urban classification (1-9)",
+  "type": "object",
+  "required": ["metadata", "counties"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "description": "Metadata about the dataset"
+    },
+    "code_definitions": {
+      "type": "object",
+      "description": "Definitions of RUCC codes"
+    },
+    "counties": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["fips", "state", "county_name", "rucc_2023"],
+        "properties": {
+          "fips": {
+            "type": "string",
+            "pattern": "^[0-9]{5}$",
+            "description": "5-digit county FIPS code"
+          },
+          "state": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 2,
+            "description": "State postal abbreviation"
+          },
+          "county_name": {
+            "type": "string",
+            "description": "County name"
+          },
+          "population_2020": {
+            "type": ["integer", "null"],
+            "minimum": 0,
+            "description": "2020 Census population"
+          },
+          "rucc_2023": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9,
+            "description": "Rural-Urban Continuum Code (1=metro >1M, 9=nonmetro <2.5k)"
+          },
+          "category": {
+            "type": "string",
+            "enum": ["Metropolitan", "Nonmetropolitan"],
+            "description": "Metro or nonmetro classification"
+          },
+          "description": {
+            "type": "string",
+            "description": "RUCC code description"
+          },
+          "metro_adjacent": {
+            "type": ["boolean", "null"],
+            "description": "Adjacent to metropolitan area (null for metro counties)"
+          },
+          "reap_eligible": {
+            "type": ["boolean", "string"],
+            "description": "Eligible for USDA REAP grants (true/false/'conditional')"
+          },
+          "notes": {
+            "type": ["string", "null"],
+            "description": "Additional notes about the county"
+          }
+        }
+      }
+    }
+  }
+}

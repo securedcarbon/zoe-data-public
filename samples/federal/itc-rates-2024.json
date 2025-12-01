@@ -1,0 +1,100 @@
+{
+  "$schema": "../schemas/itc-rates.schema.json",
+  "version": "2024.1",
+  "effective_date": "2024-01-01",
+  "last_updated": "2025-11-29",
+  "source": "IRS Section 48E / Clean Electricity Investment Credit",
+  "source_urls": [
+    "https://www.irs.gov/credits-deductions/clean-electricity-investment-credit",
+    "https://www.law.cornell.edu/uscode/text/26/48E"
+  ],
+  "notes": "Section 48E replaces Section 48 for projects placed in service after Dec 31, 2024",
+  "base_rates": {
+    "without_pwa": {
+      "rate": 0.06,
+      "description": "Base rate without prevailing wage and apprenticeship requirements"
+    },
+    "with_pwa": {
+      "rate": 0.30,
+      "description": "Base rate with prevailing wage and apprenticeship requirements",
+      "multiplier": 5
+    }
+  },
+  "adders": {
+    "domestic_content": {
+      "rate": 0.10,
+      "description": "Domestic content bonus for steel, iron, and manufactured products",
+      "requirements": [
+        "Steel and iron manufactured in the US",
+        "Manufactured products meet domestic content percentage",
+        "40% domestic content for construction starting before June 16, 2025",
+        "45% for June 16, 2025 - Dec 31, 2025",
+        "50% for 2026"
+      ],
+      "source": "IRS Notice 2024-XX"
+    },
+    "energy_community": {
+      "rate": 0.10,
+      "description": "Energy community bonus for qualifying locations",
+      "categories": [
+        {
+          "name": "coal_closure",
+          "description": "Census tracts with coal mines closed after 1999 or coal plants retired after 2009"
+        },
+        {
+          "name": "statistical_area",
+          "description": "MSAs/non-MSAs with >= 0.17% fossil fuel employment and above-average unemployment"
+        },
+        {
+          "name": "brownfield",
+          "description": "Sites with hazardous substance contamination per EPA"
+        }
+      ],
+      "source": "IRS Notice 2024-48",
+      "source_url": "https://www.irs.gov/pub/irs-drop/n-24-48.pdf"
+    },
+    "low_income": {
+      "tier_1": {
+        "rate": 0.10,
+        "description": "Located in low-income community or on Indian land"
+      },
+      "tier_2": {
+        "rate": 0.20,
+        "description": "Affordable housing development or direct low-income benefit"
+      }
+    }
+  },
+  "maximum_credit": {
+    "rate": 0.70,
+    "components": {
+      "base_with_pwa": 0.30,
+      "domestic_content": 0.10,
+      "energy_community": 0.10,
+      "low_income_tier_2": 0.20
+    }
+  },
+  "pwa_exception": {
+    "threshold_mw": 1.0,
+    "description": "Projects under 1 MW qualify for full 30% without PWA requirements"
+  },
+  "phase_down": [
+    {"year": 2025, "rate": 0.30, "status": "full"},
+    {"year": 2026, "rate": 0.30, "status": "full"},
+    {"year": 2027, "rate": 0.30, "status": "full"},
+    {"year": 2028, "rate": 0.30, "status": "full"},
+    {"year": 2029, "rate": 0.30, "status": "full"},
+    {"year": 2030, "rate": 0.30, "status": "full"},
+    {"year": 2031, "rate": 0.30, "status": "full"},
+    {"year": 2032, "rate": 0.30, "status": "full"},
+    {"year": 2033, "rate": 0.26, "status": "phase_down"},
+    {"year": 2034, "rate": 0.22, "status": "phase_down"},
+    {"year": 2035, "rate": 0.00, "status": "expired"}
+  ],
+  "phase_down_notes": "Phase-out starts for later of 2032 or when US GHG emissions from electricity are 25% of 2022 levels",
+  "energy_storage": {
+    "eligible": true,
+    "minimum_capacity_kwh": 5,
+    "property_class": "5-year",
+    "notes": "Energy storage technology qualifies for Section 48E ITC for projects placed in service after Dec 31, 2024"
+  }
+}

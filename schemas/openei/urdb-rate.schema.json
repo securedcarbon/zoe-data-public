@@ -1,0 +1,106 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://zoe-data.securedcarbon.com/schemas/openei/urdb-rate.schema.json",
+  "title": "OpenEI Utility Rate (URDB)",
+  "description": "NREL OpenEI Utility Rate Database rate structure",
+  "type": "object",
+  "required": ["utility", "rates"],
+  "properties": {
+    "utility": {
+      "type": "string",
+      "description": "Utility name"
+    },
+    "utilityAbbrev": {
+      "type": ["string", "null"],
+      "description": "Utility abbreviation"
+    },
+    "state": {
+      "type": "string",
+      "description": "State postal abbreviation"
+    },
+    "eiaid": {
+      "type": ["integer", "string", "null"],
+      "description": "EIA utility ID"
+    },
+    "dataSource": {
+      "type": "string",
+      "description": "Source of rate data"
+    },
+    "dataSourceUrl": {
+      "type": "string",
+      "description": "URL for data source"
+    },
+    "lastVerified": {
+      "type": "string",
+      "description": "Last verification date"
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Additional notes"
+    },
+    "rates": {
+      "type": "array",
+      "description": "Array of utility rate schedules",
+      "items": {
+        "type": "object",
+        "required": ["label"],
+        "properties": {
+          "label": {
+            "type": "string",
+            "description": "Unique URDB rate identifier"
+          },
+          "description": {
+            "type": ["string", "null"],
+            "description": "Rate schedule description"
+          },
+          "sector": {
+            "type": "string",
+            "description": "Customer sector (Residential, Commercial, Industrial)"
+          },
+          "approved": {
+            "type": "boolean",
+            "description": "Rate verified by NREL"
+          },
+          "effectiveDate": {
+            "type": ["string", "null"],
+            "description": "Date rate became effective"
+          },
+          "endDate": {
+            "type": ["string", "null"],
+            "description": "Date rate expires"
+          },
+          "fixedMonthlyCharge": {
+            "type": ["number", "null"],
+            "minimum": 0,
+            "description": "Fixed monthly charge in dollars"
+          },
+          "minMonthlyCharge": {
+            "type": ["number", "null"],
+            "minimum": 0,
+            "description": "Minimum monthly charge in dollars"
+          },
+          "demandRateStructure": {
+            "type": ["array", "null"],
+            "description": "Demand charge structure ($/kW)"
+          },
+          "energyRateStructure": {
+            "type": ["array", "null"],
+            "description": "Energy charge structure ($/kWh)"
+          },
+          "demandMin": {
+            "type": ["number", "null"],
+            "description": "Minimum demand (kW)"
+          },
+          "demandMax": {
+            "type": ["number", "null"],
+            "description": "Maximum demand (kW)"
+          },
+          "uri": {
+            "type": "string",
+            "description": "OpenEI URL for this rate"
+          }
+        }
+      }
+    }
+  }
+}

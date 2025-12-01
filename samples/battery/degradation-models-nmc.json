@@ -1,0 +1,299 @@
+{
+  "$schema": "../../schemas/battery/degradation-model.schema.json",
+  "metadata": {
+    "chemistry": "NMC811-GrSi",
+    "chemistry_full_name": "Nickel Manganese Cobalt (8:1:1) - Graphite Silicon",
+    "data_source": "NREL BLAST-Lite",
+    "source_url": "https://github.com/NREL/BLAST-Lite",
+    "model_version": "2024.1",
+    "last_updated": "2025-11-29",
+    "validation_status": "validated",
+    "confidence_level": "high",
+    "notes": "NMC811 represents high-energy NMC chemistry. Also includes data for NMC111 and NMC622 variants. Higher degradation rates than LFP but greater energy density."
+  },
+  "chemistry_characteristics": {
+    "energy_density_wh_kg": 250,
+    "power_density_w_kg": 400,
+    "nominal_voltage": 3.7,
+    "typical_cycle_life": 2000,
+    "calendar_life_years": 10,
+    "safety_rating": "good",
+    "cost_relative": "medium",
+    "temperature_sensitivity": "high"
+  },
+  "calendar_aging_model": {
+    "description": "Calendar aging in NMC is strongly influenced by voltage (SOC) and temperature. High SOC (>80%) accelerates degradation exponentially.",
+    "equation": "Q_loss_cal = alpha_cal * t^beta_cal * exp(-E_a_cal / (R*T)) * SOC^gamma_cal",
+    "parameters": {
+      "alpha_cal": {
+        "value": 0.035,
+        "unit": "dimensionless",
+        "description": "Calendar aging pre-exponential factor (higher than LFP)"
+      },
+      "beta_cal": {
+        "value": 0.5,
+        "unit": "dimensionless",
+        "description": "Time dependency exponent (square root of time)"
+      },
+      "E_a_cal": {
+        "value": 0.65,
+        "unit": "eV",
+        "description": "Calendar aging activation energy (higher temperature sensitivity than LFP)"
+      },
+      "gamma_cal": {
+        "value": 0.5,
+        "unit": "dimensionless",
+        "description": "SOC dependency exponent (stronger SOC effect than LFP)"
+      },
+      "R": {
+        "value": 8.617e-5,
+        "unit": "eV/K",
+        "description": "Boltzmann constant"
+      }
+    },
+    "reference_conditions": {
+      "temperature_C": 25,
+      "SOC": 0.5,
+      "capacity_fade_percent_per_year": 4.0
+    }
+  },
+  "cycle_aging_model": {
+    "description": "Cycle aging in NMC occurs through particle cracking and transition metal dissolution, accelerated by high DOD and temperature.",
+    "equation": "Q_loss_cyc = alpha_cyc * N^beta_cyc * exp(-E_a_cyc / (R*T)) * DOD^gamma_cyc",
+    "parameters": {
+      "alpha_cyc": {
+        "value": 0.025,
+        "unit": "dimensionless",
+        "description": "Cycle aging pre-exponential factor"
+      },
+      "beta_cyc": {
+        "value": 0.55,
+        "unit": "dimensionless",
+        "description": "Cycle count dependency exponent"
+      },
+      "E_a_cyc": {
+        "value": 0.45,
+        "unit": "eV",
+        "description": "Cycle aging activation energy"
+      },
+      "gamma_cyc": {
+        "value": 1.0,
+        "unit": "dimensionless",
+        "description": "DOD dependency exponent (linear DOD effect)"
+      }
+    },
+    "reference_conditions": {
+      "temperature_C": 25,
+      "DOD": 0.8,
+      "C_rate": 0.5,
+      "cycles_to_80_percent_SOH": 2000
+    }
+  },
+  "operating_conditions": {
+    "temperature_range": {
+      "min_C": -20,
+      "optimal_C": 20,
+      "max_C": 55,
+      "notes": "More sensitive to high temperatures than LFP. Degradation accelerates significantly above 40°C"
+    },
+    "SOC_recommendations": {
+      "storage_min": 0.3,
+      "storage_max": 0.5,
+      "operating_min": 0.1,
+      "operating_max": 0.85,
+      "notes": "CRITICAL: Avoid long-term storage above 80% SOC. Use 40-60% for storage."
+    },
+    "C_rate_limits": {
+      "charge_max": 1.5,
+      "discharge_max": 3.0,
+      "optimal_charge": 0.5,
+      "optimal_discharge": 1.0
+    }
+  },
+  "degradation_curves": {
+    "calendar_aging_10_years": {
+      "description": "Calendar aging at 25°C for different SOC levels over 10 years",
+      "unit": "percent_capacity_remaining",
+      "temperature_C": 25,
+      "data": [
+        {
+          "SOC": 0.0,
+          "years": [0, 1, 2, 5, 10],
+          "capacity_percent": [100, 97.5, 95.5, 89.0, 80.0]
+        },
+        {
+          "SOC": 0.5,
+          "years": [0, 1, 2, 5, 10],
+          "capacity_percent": [100, 96.0, 92.5, 82.0, 68.0]
+        },
+        {
+          "SOC": 1.0,
+          "years": [0, 1, 2, 5, 10],
+          "capacity_percent": [100, 93.0, 87.0, 72.0, 55.0]
+        }
+      ]
+    },
+    "calendar_aging_temperature": {
+      "description": "Calendar aging at 50% SOC for different temperatures over 10 years",
+      "unit": "percent_capacity_remaining",
+      "SOC": 0.5,
+      "data": [
+        {
+          "temperature_C": 0,
+          "years": [0, 1, 2, 5, 10],
+          "capacity_percent": [100, 98.5, 97.2, 93.5, 87.5]
+        },
+        {
+          "temperature_C": 25,
+          "years": [0, 1, 2, 5, 10],
+          "capacity_percent": [100, 96.0, 92.5, 82.0, 68.0]
+        },
+        {
+          "temperature_C": 45,
+          "years": [0, 1, 2, 5, 10],
+          "capacity_percent": [100, 91.0, 84.0, 67.0, 48.0]
+        }
+      ]
+    },
+    "cycle_aging_3000_cycles": {
+      "description": "Cycle aging at 25°C for different DOD levels",
+      "unit": "percent_capacity_remaining",
+      "temperature_C": 25,
+      "C_rate": 0.5,
+      "data": [
+        {
+          "DOD": 0.2,
+          "cycles": [0, 500, 1000, 2000, 3000],
+          "capacity_percent": [100, 97.5, 95.0, 90.5, 86.5]
+        },
+        {
+          "DOD": 0.5,
+          "cycles": [0, 500, 1000, 2000, 3000],
+          "capacity_percent": [100, 95.5, 91.5, 84.0, 77.5]
+        },
+        {
+          "DOD": 1.0,
+          "cycles": [0, 500, 1000, 2000, 3000],
+          "capacity_percent": [100, 92.0, 85.0, 72.5, 63.0]
+        }
+      ]
+    }
+  },
+  "nmc_variants": {
+    "NMC111": {
+      "description": "Equal ratio Nickel:Manganese:Cobalt (1:1:1)",
+      "energy_density_wh_kg": 180,
+      "cycle_life": 2500,
+      "degradation_rate": "moderate",
+      "notes": "Most stable NMC chemistry, lower energy density",
+      "degradation_scalar": 0.85
+    },
+    "NMC622": {
+      "description": "Nickel:Manganese:Cobalt (6:2:2)",
+      "energy_density_wh_kg": 220,
+      "cycle_life": 2200,
+      "degradation_rate": "moderate-high",
+      "notes": "Balanced energy density and cycle life",
+      "degradation_scalar": 0.95
+    },
+    "NMC811": {
+      "description": "Nickel:Manganese:Cobalt (8:1:1)",
+      "energy_density_wh_kg": 250,
+      "cycle_life": 2000,
+      "degradation_rate": "high",
+      "notes": "Highest energy density, most sensitive to degradation",
+      "degradation_scalar": 1.0
+    }
+  },
+  "typical_applications": [
+    "Electric vehicles",
+    "High-energy BESS",
+    "Portable electronics",
+    "Aviation/aerospace",
+    "High-performance applications"
+  ],
+  "example_cells": [
+    {
+      "manufacturer": "LG Energy Solution",
+      "model": "M50",
+      "capacity_ah": 5.0,
+      "format": "21700",
+      "nominal_voltage": 3.7,
+      "chemistry_variant": "NMC811",
+      "blast_lite_model": "Nmc811GrSi_LgM50_4Ah"
+    },
+    {
+      "manufacturer": "LG Energy Solution",
+      "model": "MJ1",
+      "capacity_ah": 3.5,
+      "format": "18650",
+      "nominal_voltage": 3.7,
+      "chemistry_variant": "NMC811",
+      "blast_lite_model": "Nmc811GrSi_LgMj1_3p5Ah"
+    },
+    {
+      "manufacturer": "Kokam",
+      "model": "75Ah",
+      "capacity_ah": 75,
+      "format": "prismatic",
+      "nominal_voltage": 3.7,
+      "chemistry_variant": "NMC111",
+      "notes": "Grid storage application"
+    },
+    {
+      "manufacturer": "DENSO",
+      "model": "Commercial",
+      "capacity_ah": 50,
+      "format": "large_format",
+      "nominal_voltage": 3.7,
+      "chemistry_variant": "NMC622",
+      "notes": "Automotive/industrial applications"
+    }
+  ],
+  "model_accuracy": {
+    "capacity_fade_rms_error_percent": 2.5,
+    "resistance_growth_rms_error_percent": 15,
+    "validation_conditions": "9 aging test conditions from 0°C to 55°C",
+    "confidence_interval_percent": 90,
+    "extrapolation_uncertainty_10_years": "±15-20%",
+    "notes": "Higher uncertainty than LFP due to more complex degradation mechanisms"
+  },
+  "warranty_implications": {
+    "typical_warranty_years": 8,
+    "typical_warranty_cycles": 3000,
+    "typical_warranty_capacity_percent": 70,
+    "notes": "NMC warranties typically shorter than LFP. Real-world degradation may exceed modeled rates in extreme conditions."
+  },
+  "risk_factors": {
+    "high_soc_storage": "critical",
+    "high_temperature": "critical",
+    "deep_cycling": "moderate",
+    "fast_charging": "moderate",
+    "notes": "NMC requires more careful thermal management and SOC control than LFP"
+  },
+  "references": [
+    {
+      "source": "NREL BLAST-Lite",
+      "url": "https://github.com/NREL/BLAST-Lite",
+      "type": "software"
+    },
+    {
+      "source": "Semi-empirical ageing model for LFP and NMC Li-ion battery chemistries",
+      "journal": "Journal of Energy Storage",
+      "year": 2023,
+      "type": "peer_reviewed"
+    },
+    {
+      "source": "Life Prediction Model for Grid-Connected Li-ion Battery Energy Storage System",
+      "reference": "NREL/TP-5400-67102",
+      "year": 2017,
+      "type": "technical_report"
+    },
+    {
+      "source": "Comprehensive battery aging dataset: NMC/C-SiO cell",
+      "journal": "Scientific Data",
+      "year": 2024,
+      "type": "peer_reviewed"
+    }
+  ]
+}

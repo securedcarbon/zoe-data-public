@@ -1,0 +1,120 @@
+{
+  "program_name": "Emergency Load Reduction Program (ELRP)",
+  "utility": "Pacific Gas and Electric Company (PG&E)",
+  "state": "CA",
+  "service_territory": "Northern and Central California",
+  "program_type": "demand_response",
+  "program_id": "PGE-ELRP",
+  "data_source": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/demand-response-dr/emergency-load-reduction-program",
+  "last_verified": "2025-11-29",
+  "program_duration": {
+    "start_year": 2021,
+    "end_year": 2027,
+    "pilot_program": true
+  },
+  "season": {
+    "start_date": "May 1",
+    "end_date": "October 31"
+  },
+  "subprograms": [
+    {
+      "name": "ELRP A.4/A.5 - Battery/VPP",
+      "participant_type": "residential_commercial",
+      "technology": "battery_storage",
+      "incentive_structure": {
+        "rate_per_kwh": 2.0,
+        "currency": "USD",
+        "basis": "incremental_load_reduction",
+        "payment_timing": "end_of_season"
+      },
+      "enrollment_requirements": {
+        "minimum_reduction_kw": null,
+        "technology_required": "battery_energy_storage",
+        "enrollment_process": "aggregator_or_direct"
+      },
+      "performance_requirements": {
+        "penalties": false,
+        "minimum_events": 0
+      },
+      "expected_annual_earnings": {
+        "min_usd": 100,
+        "max_usd": 250,
+        "typical_usd": 175
+      }
+    },
+    {
+      "name": "ELRP A.6 - Residential Power Saver Rewards",
+      "participant_type": "residential",
+      "technology": "any",
+      "incentive_structure": {
+        "rate_per_kwh": 1.0,
+        "currency": "USD",
+        "basis": "incremental_load_reduction",
+        "payment_timing": "annual",
+        "note": "Reduced from $2/kWh in previous years"
+      },
+      "enrollment_requirements": {
+        "minimum_reduction_kw": null,
+        "technology_required": null,
+        "enrollment_process": "direct_enrollment"
+      },
+      "program_sunset": {
+        "end_year": 2025,
+        "note": "Residential Power Saver Rewards will sunset at the conclusion of the 2025 ELRP program year"
+      },
+      "expected_annual_earnings": {
+        "min_usd": 100,
+        "max_usd": 250,
+        "typical_usd": 175
+      }
+    }
+  ],
+  "event_characteristics": {
+    "event_duration_hours": "variable",
+    "notice_period": "short_notice",
+    "event_frequency": "as_needed_emergency",
+    "event_window": "high_demand_periods"
+  },
+  "payment_terms": {
+    "payment_frequency": "annual",
+    "payment_date": "after_october_31",
+    "minimum_payout_threshold": "varies_by_customer",
+    "payment_method": "bill_credit_or_check"
+  },
+  "eligibility": {
+    "customer_types": [
+      "residential",
+      "commercial",
+      "industrial"
+    ],
+    "service_requirements": [
+      "PG&E_customer",
+      "or_CCA_customer_in_PG&E_territory"
+    ],
+    "exclusions": [
+      "customers_enrolled_in_other_supply_side_DR_programs"
+    ]
+  },
+  "automation_potential": {
+    "data_accessibility": "high",
+    "update_frequency": "annual",
+    "api_available": false,
+    "scraping_feasibility": "medium",
+    "structured_data": true,
+    "notes": "CPUC publishes program data and annual updates. Olivine Inc. provides third-party enrollment platform."
+  },
+  "notes": [
+    "ELRP is a statewide program available through all three California IOUs (PG&E, SCE, SDG&E)",
+    "Program designed to prevent rotating outages during grid emergencies",
+    "Virtual Power Plant (VPP) participants can earn higher rates",
+    "Residential program (A.6) ends in 2025, but battery programs continue through 2027"
+  ],
+  "related_programs": [
+    "PG&E Power Saver Rewards",
+    "Tesla Virtual Power Plant"
+  ],
+  "contacts": {
+    "enrollment_platform": "https://elrp.olivineinc.com/",
+    "pge_program_page": "https://www.pge.com/en/save-energy-and-money/energy-saving-programs/demand-response-programs.html"
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "meta": {
+    "source": "CPUC SGIP / selfgenca.com / sgipsd.org",
+    "last_updated": "2025-11-29",
+    "validated_by": "Team Foxtrot - Sprint 2d",
+    "update_frequency": "annual",
+    "notes": "Step levels and budgets change; rates are per step. Budget remaining requires real-time API."
+  },
+  "program": {
+    "name": "Self-Generation Incentive Program",
+    "abbreviation": "SGIP",
+    "state": "CA",
+    "administrator": "CPUC",
+    "program_end_date": "2025-12-31",
+    "total_budget_authorized": 813400000,
+    "currency": "USD"
+  },
+  "program_administrators": [
+    {"id": "pge", "name": "Pacific Gas & Electric", "territory": "Northern California"},
+    {"id": "sce", "name": "Southern California Edison", "territory": "Central/Southern California"},
+    {"id": "sdge", "name": "San Diego Gas & Electric", "territory": "San Diego County"},
+    {"id": "scg", "name": "SoCalGas", "territory": "Southern California"},
+    {"id": "cse", "name": "Center for Sustainable Energy", "territory": "Statewide Administrator"}
+  ],
+  "incentive_categories": {
+    "general_market": {
+      "large_scale_storage": {
+        "description": "Energy storage systems > 30 kWh",
+        "steps": [
+          {"step": 1, "rate": 0.50, "unit": "$/Wh"},
+          {"step": 2, "rate": 0.40, "unit": "$/Wh"},
+          {"step": 3, "rate": 0.35, "unit": "$/Wh"},
+          {"step": 4, "rate": 0.30, "unit": "$/Wh"},
+          {"step": 5, "rate": 0.25, "unit": "$/Wh"}
+        ]
+      },
+      "large_scale_storage_with_itc": {
+        "description": "Systems receiving ITC (pre-12/31/2021 rules)",
+        "steps": [
+          {"step": 1, "rate": 0.36, "unit": "$/Wh"},
+          {"step": 2, "rate": 0.29, "unit": "$/Wh"},
+          {"step": 3, "rate": 0.25, "unit": "$/Wh"},
+          {"step": 4, "rate": 0.22, "unit": "$/Wh"},
+          {"step": 5, "rate": 0.18, "unit": "$/Wh"}
+        ]
+      },
+      "small_residential": {
+        "description": "Residential systems <= 30 kWh",
+        "steps": [
+          {"step": 1, "rate": 0.50, "unit": "$/Wh"},
+          {"step": 2, "rate": 0.45, "unit": "$/Wh"},
+          {"step": 3, "rate": 0.40, "unit": "$/Wh"},
+          {"step": 4, "rate": 0.35, "unit": "$/Wh"},
+          {"step": 5, "rate": 0.30, "unit": "$/Wh"},
+          {"step": 6, "rate": 0.20, "unit": "$/Wh"},
+          {"step": 7, "rate": 0.15, "unit": "$/Wh"}
+        ]
+      },
+      "resiliency_adder": {
+        "description": "Non-residential with critical needs",
+        "rate": 0.15,
+        "unit": "$/Wh"
+      }
+    },
+    "equity": {
+      "storage_equity": {
+        "description": "Low-income / disadvantaged community customers",
+        "rate": 0.85,
+        "unit": "$/Wh",
+        "coverage_pct": 85
+      },
+      "equity_resiliency": {
+        "description": "Equity + High Fire Threat District or PSPS affected",
+        "rate": 1.00,
+        "unit": "$/Wh",
+        "coverage_pct": 100
+      },
+      "residential_solar_storage_equity": {
+        "description": "Low-income residential solar+storage",
+        "solar_rate": 3.10,
+        "solar_unit": "$/W",
+        "storage_rate": 1.10,
+        "storage_unit": "$/Wh",
+        "start_date": "2025-06-02"
+      }
+    },
+    "renewable_generation": {
+      "base_rate": 2.00,
+      "unit": "$/W",
+      "resiliency_adder": 2.50,
+      "max_total": 4.50
+    }
+  },
+  "eligibility": {
+    "customer_classes": ["residential", "commercial", "industrial", "agricultural"],
+    "technologies": ["battery_storage", "fuel_cell", "gas_turbine", "wind"],
+    "interconnection_required": true,
+    "utility_customer_required": true
+  },
+  "developer_cap": {
+    "description": "20% limit per developer per budget category per step",
+    "percentage": 20,
+    "applies_to": ["generation_budget", "large_scale_storage", "small_residential"]
+  },
+  "source_urls": {
+    "program_metrics": "https://www.selfgenca.com/home/program_metrics/",
+    "cpuc_main": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/self-generation-incentive-program",
+    "handbook_2025": "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/self-generation-incentive-program/2025-sgip-handbook-v1.pdf",
+    "sgip_sd": "https://sgipsd.org/incentives"
+  }
+}

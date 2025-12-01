@@ -1,0 +1,139 @@
+{
+  "utility": "San Diego Gas & Electric (SDG&E)",
+  "state": "CA",
+  "service_territory": "San Diego County and southern Orange County",
+  "data_source": "https://www.sdge.com/businesses/savings-center/energy-management-programs/demand-response",
+  "last_verified": "2025-11-29",
+  "programs": [
+    {
+      "program_name": "Emergency Load Reduction Program (ELRP)",
+      "program_id": "SDGE-ELRP",
+      "program_type": "demand_response",
+      "participant_type": "business_commercial",
+      "program_duration": {
+        "start_year": 2021,
+        "end_year": 2027,
+        "pilot_program": true
+      },
+      "program_description": "Seven-year pilot program offering financial incentives to reduce energy usage or export energy during times of high grid stress and emergencies",
+      "season": {
+        "start_date": "May 1",
+        "end_date": "October 31"
+      },
+      "incentive_structure": {
+        "rate_per_kwh": 2.0,
+        "currency": "USD",
+        "basis": "actual_load_reduction",
+        "payment_timing": "post_event"
+      },
+      "enrollment_requirements": {
+        "minimum_reduction_kw": 1,
+        "customer_types": [
+          "commercial",
+          "industrial",
+          "agricultural"
+        ],
+        "service_types": [
+          "bundled",
+          "CCA",
+          "direct_access"
+        ],
+        "exclusions": [
+          "customers_enrolled_in_other_supply_side_DR_programs"
+        ]
+      },
+      "performance_requirements": {
+        "penalties": false,
+        "minimum_participation": false
+      },
+      "event_characteristics": {
+        "event_trigger": "high_grid_stress_emergency",
+        "goal": "avoid_rotating_outages",
+        "notice_period": "short_notice"
+      },
+      "contacts": {
+        "enrollment_platform": "https://elrp.sdge.com/",
+        "program_page": "https://www.sdge.com/businesses/savings-center/energy-management-programs/demand-response"
+      }
+    },
+    {
+      "program_name": "Critical Peak Pricing - Dynamic (CPP-D)",
+      "program_id": "SDGE-CPP-D",
+      "program_type": "time_of_use_pricing_with_DR",
+      "participant_type": "business_commercial",
+      "program_description": "Time-of-use pricing plan with critical peak pricing event days when customers conserve energy due to high grid demand",
+      "season": {
+        "start_date": "May 1",
+        "end_date": "October 31"
+      },
+      "pricing_structure": {
+        "event_period": {
+          "hours": "4:00 PM - 9:00 PM",
+          "pricing": "additional_charge_during_events",
+          "note": "CPP Event Period rate is additional charge on top of normal TOU rates"
+        },
+        "non_event_periods": {
+          "pricing": "standard_TOU_rates"
+        }
+      },
+      "event_characteristics": {
+        "event_trigger": "high_demand_on_grid",
+        "event_duration_hours": 5,
+        "event_window": "4pm_to_9pm"
+      },
+      "enrollment_requirements": {
+        "customer_type": "bundled_business",
+        "service_requirements": [
+          "SDG&E_bundled_customer"
+        ]
+      },
+      "savings_potential": {
+        "basis": "conservation_during_event_hours",
+        "method": "avoid_high_event_period_charges"
+      },
+      "contacts": {
+        "program_page": "https://www.sdge.com/businesses/savings-center/energy-management-programs/demand-response/critical-peak-pricing"
+      }
+    },
+    {
+      "program_name": "Reduce Your Use (RYU)",
+      "program_id": "SDGE-RYU",
+      "program_type": "demand_response_event",
+      "participant_type": "business_residential",
+      "program_description": "Event-based program for customers on Time-of-Use pricing plans to conserve energy during high demand periods",
+      "enrollment_requirements": {
+        "rate_plan": "time_of_use",
+        "customer_types": [
+          "residential",
+          "business"
+        ]
+      },
+      "event_characteristics": {
+        "event_trigger": "high_demand_periods",
+        "notification": "advance_notice_provided",
+        "goal": "grid_reliability"
+      },
+      "contacts": {
+        "program_page": "https://www.sdge.com/businesses/savings-center/energy-management-programs/demand-response"
+      }
+    }
+  ],
+  "automation_potential": {
+    "data_accessibility": "high",
+    "update_frequency": "annual",
+    "api_available": false,
+    "scraping_feasibility": "high",
+    "structured_data": true,
+    "notes": "SDG&E provides program information on website. CPUC requires annual reporting for all California IOUs."
+  },
+  "program_monitoring": {
+    "event_status": "https://www.sdge.com/demand-response-program-status",
+    "real_time_monitoring": true
+  },
+  "notes": [
+    "SDG&E is one of three California IOUs offering ELRP",
+    "CPP-D combines time-of-use pricing with demand response events",
+    "RYU program leverages existing TOU rate plans for DR participation",
+    "All programs operate primarily during May-October peak season"
+  ]
+}

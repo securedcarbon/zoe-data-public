@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://zoe-data.securedcarbon.com/schemas/usda/ruca.schema.json",
+  "title": "USDA Rural-Urban Commuting Area Codes",
+  "description": "Census tract-level rural-urban classification",
+  "type": "object",
+  "required": ["metadata", "census_tracts"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "description": "Metadata about the dataset"
+    },
+    "code_definitions": {
+      "type": "object",
+      "description": "Definitions of RUCA codes"
+    },
+    "summary_statistics": {
+      "type": "object",
+      "description": "Summary statistics for the dataset"
+    },
+    "usage_notes": {
+      "type": "object",
+      "description": "Notes on how to use the data"
+    },
+    "census_tracts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["tract_fips", "state_fips", "county_fips", "tract", "ruca_primary"],
+        "properties": {
+          "state_fips": {
+            "type": "string",
+            "pattern": "^[0-9]{2}$",
+            "description": "2-digit state FIPS code"
+          },
+          "county_fips": {
+            "type": "string",
+            "pattern": "^[0-9]{3}$",
+            "description": "3-digit county FIPS code"
+          },
+          "tract": {
+            "type": "string",
+            "pattern": "^[0-9]{6}$",
+            "description": "6-digit tract code"
+          },
+          "tract_fips": {
+            "type": "string",
+            "pattern": "^[0-9]{11}$",
+            "description": "11-digit census tract identifier (state+county+tract)"
+          },
+          "state": {
+            "type": "string",
+            "description": "State name"
+          },
+          "county": {
+            "type": "string",
+            "description": "County name"
+          },
+          "population_2020": {
+            "type": ["integer", "null"],
+            "minimum": 0,
+            "description": "2020 Census population"
+          },
+          "land_area_sq_mi": {
+            "type": ["number", "null"],
+            "minimum": 0,
+            "description": "Land area in square miles"
+          },
+          "population_density": {
+            "type": ["number", "null"],
+            "minimum": 0,
+            "description": "Population per square mile"
+          },
+          "ruca_primary": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 99,
+            "description": "Primary RUCA code (1-10, 99)"
+          },
+          "ruca_secondary": {
+            "type": "number",
+            "description": "Secondary RUCA code (decimal)"
+          },
+          "classification": {
+            "type": "string",
+            "description": "RUCA classification category"
+          },
+          "description": {
+            "type": ["string", "null"],
+            "description": "Detailed description of the tract classification"
+          },
+          "rural": {
+            "type": "boolean",
+            "description": "Rural classification (true/false)"
+          },
+          "reap_eligible": {
+            "type": ["boolean", "string"],
+            "description": "Eligible for USDA REAP grants"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://zoe-data.securedcarbon.com/schemas/battery/degradation-models.schema.json",
+  "title": "Battery Degradation Model",
+  "description": "NREL BLAST-Lite battery degradation model parameters",
+  "type": "object",
+  "required": ["metadata"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "JSON schema reference"
+    },
+    "metadata": {
+      "type": "object",
+      "required": ["chemistry"],
+      "properties": {
+        "chemistry": {
+          "type": "string",
+          "description": "Battery chemistry type"
+        },
+        "chemistry_full_name": {
+          "type": "string",
+          "description": "Full chemistry name"
+        },
+        "data_source": {
+          "type": "string",
+          "description": "Source of degradation data"
+        },
+        "source_url": {
+          "type": "string",
+          "description": "URL for data source"
+        },
+        "model_version": {
+          "type": "string",
+          "description": "Model version number"
+        },
+        "last_updated": {
+          "type": "string",
+          "description": "Last update date"
+        },
+        "validation_status": {
+          "type": "string",
+          "description": "Validation status"
+        },
+        "confidence_level": {
+          "type": "string",
+          "description": "Model confidence level"
+        },
+        "notes": {
+          "type": ["string", "null"],
+          "description": "Additional notes"
+        }
+      }
+    },
+    "chemistry_characteristics": {
+      "type": "object",
+      "description": "Chemistry-specific characteristics"
+    },
+    "cycle_aging_model": {
+      "type": "object",
+      "description": "Cycle aging degradation model parameters"
+    },
+    "calendar_aging_model": {
+      "type": "object",
+      "description": "Calendar aging degradation model parameters"
+    },
+    "degradation_curves": {
+      "type": ["object", "array", "null"],
+      "description": "Degradation curves and lookup tables"
+    },
+    "operating_conditions": {
+      "type": "object",
+      "description": "Recommended operating conditions"
+    },
+    "model_accuracy": {
+      "type": "object",
+      "description": "Model accuracy metrics and validation"
+    },
+    "example_cells": {
+      "type": ["array", "null"],
+      "description": "Example commercial cells using this chemistry"
+    },
+    "typical_applications": {
+      "type": ["array", "null"],
+      "description": "Typical applications for this chemistry"
+    },
+    "warranty_implications": {
+      "type": ["object", "null"],
+      "description": "Warranty considerations"
+    },
+    "references": {
+      "type": "array",
+      "description": "Academic and technical references"
+    }
+  }
+}

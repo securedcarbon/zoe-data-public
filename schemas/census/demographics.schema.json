@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://zoe-data.securedcarbon.com/schemas/census/demographics.schema.json",
+  "title": "Census ACS Demographics",
+  "description": "U.S. Census Bureau American Community Survey 5-Year Estimates",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["geoid", "population", "data_year", "source"],
+    "properties": {
+      "geoid": {
+        "type": "string",
+        "pattern": "^[0-9]{11}$",
+        "description": "11-digit census tract identifier"
+      },
+      "population": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "Total population (B01001_001E)"
+      },
+      "median_income": {
+        "type": ["integer", "null"],
+        "minimum": 0,
+        "description": "Median household income in dollars (B19013_001E), null if unavailable"
+      },
+      "poverty_rate": {
+        "type": ["number", "null"],
+        "minimum": 0,
+        "maximum": 1,
+        "description": "Poverty rate as decimal (0-1), null if unavailable"
+      },
+      "data_year": {
+        "type": "integer",
+        "minimum": 2000,
+        "maximum": 2100,
+        "description": "Year of data collection"
+      },
+      "source": {
+        "type": "string",
+        "description": "Data source (e.g., 'ACS 5-Year')"
+      }
+    }
+  }
+}

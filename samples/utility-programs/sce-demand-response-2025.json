@@ -1,0 +1,182 @@
+{
+  "utility": "Southern California Edison (SCE)",
+  "state": "CA",
+  "service_territory": "Southern California",
+  "data_source": "https://www.sce.com/residential/demand-response",
+  "last_verified": "2025-11-29",
+  "programs": [
+    {
+      "program_name": "Emergency Load Reduction Program (ELRP)",
+      "program_id": "SCE-ELRP",
+      "program_type": "demand_response",
+      "participant_type": "business_commercial",
+      "program_duration": {
+        "start_year": 2021,
+        "end_year": 2027,
+        "pilot_program": true
+      },
+      "season": {
+        "start_date": "May 1",
+        "end_date": "October 31"
+      },
+      "subprograms": [
+        {
+          "name": "ELRP Non-A.6 (Business/Commercial)",
+          "incentive_structure": {
+            "rate_per_kwh": 2.0,
+            "currency": "USD",
+            "basis": "actual_load_reduction"
+          },
+          "performance_requirements": {
+            "penalties": false,
+            "note": "Zero penalties if you can't participate"
+          }
+        },
+        {
+          "name": "ELRP A.6 (Residential)",
+          "incentive_structure": {
+            "rate_per_kwh": 1.0,
+            "currency": "USD",
+            "basis": "actual_load_reduction"
+          },
+          "program_sunset": {
+            "end_year": 2025
+          }
+        }
+      ],
+      "enrollment_requirements": {
+        "minimum_reduction_kw": 1,
+        "exclusions": [
+          "customers_enrolled_in_other_supply_side_DR_programs"
+        ]
+      },
+      "contacts": {
+        "enrollment_platform": "https://elrp.sce.com/"
+      }
+    },
+    {
+      "program_name": "Summer Discount Plan (SDP)",
+      "program_id": "SCE-SDP",
+      "program_type": "demand_response",
+      "participant_type": "residential",
+      "season": {
+        "start_date": "June 1",
+        "end_date": "October 1"
+      },
+      "incentive_structure": {
+        "annual_credits_max": 160,
+        "currency": "USD",
+        "type": "bill_credit",
+        "basis": "event_participation"
+      },
+      "alternative_option": {
+        "name": "Enhanced SDP",
+        "annual_credits_max": 180,
+        "signup_bonus": 50,
+        "currency": "USD"
+      },
+      "enrollment_requirements": {
+        "customer_type": "residential",
+        "service_requirements": [
+          "SCE_bundled_customer"
+        ]
+      },
+      "contacts": {
+        "program_page": "https://www.sce.com/residential/rebates-savings/summer-discount-plan"
+      }
+    },
+    {
+      "program_name": "Smart Energy Program",
+      "program_id": "SCE-SMART-ENERGY",
+      "program_type": "demand_response",
+      "participant_type": "residential",
+      "technology": "smart_thermostat",
+      "season": {
+        "start_date": "June 1",
+        "end_date": "September 30"
+      },
+      "incentive_structure": {
+        "signup_bonus": 75,
+        "annual_participation": 40,
+        "thermostat_recycling_rebate": 30,
+        "currency": "USD",
+        "type": "bill_credit"
+      },
+      "enrollment_requirements": {
+        "technology_required": "smart_thermostat",
+        "customer_type": "residential"
+      },
+      "contacts": {
+        "program_page": "https://www.sce.com/residential/demand-response"
+      }
+    },
+    {
+      "program_name": "SmartShift Rewards",
+      "program_id": "SCE-SMARTSHIFT",
+      "program_type": "demand_response",
+      "participant_type": "residential",
+      "technology": "electric_water_heater",
+      "incentive_structure": {
+        "signup_bonus": 50,
+        "monthly_participation": "varies",
+        "currency": "USD",
+        "type": "bill_credit",
+        "basis": "monthly_participation"
+      },
+      "enrollment_requirements": {
+        "technology_required": "electric_water_heater",
+        "smart_control": true,
+        "customer_type": "residential"
+      },
+      "program_description": "Turns electric water heater into smart device, activating when rates are lower",
+      "contacts": {
+        "program_page": "https://www.sce.com/residential/demand-response"
+      }
+    },
+    {
+      "program_name": "Capacity Bidding Program Elect (CBP-E)",
+      "program_id": "SCE-CBP-E",
+      "program_type": "demand_response",
+      "participant_type": "business_commercial",
+      "incentive_structure": {
+        "energy_payments": {
+          "type": "per_kwh_reduced",
+          "basis": "actual_event_reduction",
+          "note": "Only earned when events occur"
+        },
+        "capacity_payments": {
+          "type": "monthly_reservation",
+          "basis": "committed_capacity",
+          "note": "Earned even if no events called"
+        }
+      },
+      "enrollment_requirements": {
+        "customer_type": "commercial_industrial",
+        "enrollment_method": "direct_or_aggregator"
+      },
+      "contacts": {
+        "program_page": "https://www.sce.com/business/demand-response"
+      }
+    }
+  ],
+  "automation_potential": {
+    "data_accessibility": "high",
+    "update_frequency": "annual",
+    "api_available": false,
+    "scraping_feasibility": "high",
+    "structured_data": true,
+    "notes": "SCE provides detailed program information on website. CPUC requires annual program reporting."
+  },
+  "general_rate_case_2025": {
+    "adopted_revenue_requirement": 9756000000,
+    "increase_over_2024": 1174000000,
+    "percent_increase": 13.68,
+    "note": "DR program administration costs included in rate base"
+  },
+  "notes": [
+    "SCE is one of three California IOUs offering ELRP",
+    "Multiple residential programs available for different technologies",
+    "Business programs include both energy and capacity payments",
+    "All programs designed to support grid reliability during summer peak demand"
+  ]
+}

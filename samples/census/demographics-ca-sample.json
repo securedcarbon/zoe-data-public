@@ -1,0 +1,762 @@
+[
+  {
+    "geoid": "06037101100",
+    "population": 4235,
+    "median_income": 68500,
+    "poverty_rate": 0.12,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037101200",
+    "population": 3890,
+    "median_income": 72300,
+    "poverty_rate": 0.09,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037101300",
+    "population": 5124,
+    "median_income": 45200,
+    "poverty_rate": 0.23,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037101400",
+    "population": 3456,
+    "median_income": 89400,
+    "poverty_rate": 0.07,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037101500",
+    "population": 4789,
+    "median_income": 56700,
+    "poverty_rate": 0.15,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037101600",
+    "population": 2987,
+    "median_income": 95200,
+    "poverty_rate": 0.05,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037101700",
+    "population": 4567,
+    "median_income": 38900,
+    "poverty_rate": 0.28,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037101800",
+    "population": 3821,
+    "median_income": 67800,
+    "poverty_rate": 0.11,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037101900",
+    "population": 5234,
+    "median_income": 52400,
+    "poverty_rate": 0.18,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037102000",
+    "population": 4012,
+    "median_income": 78900,
+    "poverty_rate": 0.08,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037260100",
+    "population": 3654,
+    "median_income": 61200,
+    "poverty_rate": 0.14,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037260200",
+    "population": 4876,
+    "median_income": 48300,
+    "poverty_rate": 0.21,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037260300",
+    "population": 3298,
+    "median_income": 85600,
+    "poverty_rate": 0.06,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037260400",
+    "population": 5432,
+    "median_income": 43700,
+    "poverty_rate": 0.24,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037260500",
+    "population": 3987,
+    "median_income": 71500,
+    "poverty_rate": 0.10,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037260600",
+    "population": 4321,
+    "median_income": 58900,
+    "poverty_rate": 0.16,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037260700",
+    "population": 2876,
+    "median_income": 92300,
+    "poverty_rate": 0.04,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037260800",
+    "population": 5098,
+    "median_income": 41200,
+    "poverty_rate": 0.26,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037260900",
+    "population": 4154,
+    "median_income": 64800,
+    "poverty_rate": 0.13,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037261000",
+    "population": 3765,
+    "median_income": 76400,
+    "poverty_rate": 0.09,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037261100",
+    "population": 4543,
+    "median_income": 50600,
+    "poverty_rate": 0.19,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037261200",
+    "population": 3421,
+    "median_income": 88700,
+    "poverty_rate": 0.06,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037261300",
+    "population": 5267,
+    "median_income": 46500,
+    "poverty_rate": 0.22,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037261400",
+    "population": 3912,
+    "median_income": 69300,
+    "poverty_rate": 0.11,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037261500",
+    "population": 4678,
+    "median_income": 55400,
+    "poverty_rate": 0.17,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037261600",
+    "population": 3087,
+    "median_income": 96800,
+    "poverty_rate": 0.04,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037261700",
+    "population": 5321,
+    "median_income": 39800,
+    "poverty_rate": 0.27,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037261800",
+    "population": 4234,
+    "median_income": 63200,
+    "poverty_rate": 0.12,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037261900",
+    "population": 3856,
+    "median_income": 74900,
+    "poverty_rate": 0.08,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037262000",
+    "population": 4987,
+    "median_income": 49700,
+    "poverty_rate": 0.20,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037262100",
+    "population": 3543,
+    "median_income": 82100,
+    "poverty_rate": 0.07,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037262200",
+    "population": 5124,
+    "median_income": 44300,
+    "poverty_rate": 0.24,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037262300",
+    "population": 4087,
+    "median_income": 66700,
+    "poverty_rate": 0.13,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037262400",
+    "population": 3721,
+    "median_income": 79500,
+    "poverty_rate": 0.09,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037262500",
+    "population": 4654,
+    "median_income": 53100,
+    "poverty_rate": 0.18,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037262600",
+    "population": 3198,
+    "median_income": 91400,
+    "poverty_rate": 0.05,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037262700",
+    "population": 5432,
+    "median_income": 42100,
+    "poverty_rate": 0.25,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037262800",
+    "population": 4321,
+    "median_income": 62400,
+    "poverty_rate": 0.14,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037262900",
+    "population": 3945,
+    "median_income": 73600,
+    "poverty_rate": 0.10,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037263000",
+    "population": 5098,
+    "median_income": 47800,
+    "poverty_rate": 0.21,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037263100",
+    "population": 3654,
+    "median_income": 85900,
+    "poverty_rate": 0.06,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037263200",
+    "population": 4876,
+    "median_income": 45600,
+    "poverty_rate": 0.23,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037263300",
+    "population": 3987,
+    "median_income": 68100,
+    "poverty_rate": 0.12,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037263400",
+    "population": 4543,
+    "median_income": 57200,
+    "poverty_rate": 0.16,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037263500",
+    "population": 2987,
+    "median_income": 94500,
+    "poverty_rate": 0.04,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037263600",
+    "population": 5234,
+    "median_income": 40500,
+    "poverty_rate": 0.26,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037263700",
+    "population": 4154,
+    "median_income": 64300,
+    "poverty_rate": 0.13,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037263800",
+    "population": 3765,
+    "median_income": 77800,
+    "poverty_rate": 0.08,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037263900",
+    "population": 4987,
+    "median_income": 51900,
+    "poverty_rate": 0.19,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037264000",
+    "population": 3421,
+    "median_income": 87200,
+    "poverty_rate": 0.07,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037264100",
+    "population": 5321,
+    "median_income": 43200,
+    "poverty_rate": 0.24,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037264200",
+    "population": 4087,
+    "median_income": 65500,
+    "poverty_rate": 0.11,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037264300",
+    "population": 3856,
+    "median_income": 71900,
+    "poverty_rate": 0.10,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037264400",
+    "population": 4678,
+    "median_income": 54700,
+    "poverty_rate": 0.17,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037264500",
+    "population": 3087,
+    "median_income": 93600,
+    "poverty_rate": 0.05,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037264600",
+    "population": 5124,
+    "median_income": 41800,
+    "poverty_rate": 0.25,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037264700",
+    "population": 4234,
+    "median_income": 63900,
+    "poverty_rate": 0.12,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037264800",
+    "population": 3912,
+    "median_income": 75200,
+    "poverty_rate": 0.09,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037264900",
+    "population": 5098,
+    "median_income": 48600,
+    "poverty_rate": 0.20,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037265000",
+    "population": 3543,
+    "median_income": 84300,
+    "poverty_rate": 0.06,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037265100",
+    "population": 4876,
+    "median_income": 46100,
+    "poverty_rate": 0.22,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037265200",
+    "population": 3987,
+    "median_income": 67200,
+    "poverty_rate": 0.11,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037265300",
+    "population": 4654,
+    "median_income": 56100,
+    "poverty_rate": 0.16,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037265400",
+    "population": 3198,
+    "median_income": 95700,
+    "poverty_rate": 0.04,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037265500",
+    "population": 5432,
+    "median_income": 39200,
+    "poverty_rate": 0.27,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037265600",
+    "population": 4321,
+    "median_income": 62800,
+    "poverty_rate": 0.13,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037265700",
+    "population": 3945,
+    "median_income": 74100,
+    "poverty_rate": 0.09,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037265800",
+    "population": 5234,
+    "median_income": 50200,
+    "poverty_rate": 0.18,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037265900",
+    "population": 3654,
+    "median_income": 86400,
+    "poverty_rate": 0.07,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037266000",
+    "population": 4987,
+    "median_income": 44800,
+    "poverty_rate": 0.23,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037266100",
+    "population": 4154,
+    "median_income": 66100,
+    "poverty_rate": 0.12,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037266200",
+    "population": 3765,
+    "median_income": 78300,
+    "poverty_rate": 0.08,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037266300",
+    "population": 4543,
+    "median_income": 53600,
+    "poverty_rate": 0.17,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037266400",
+    "population": 2987,
+    "median_income": 92800,
+    "poverty_rate": 0.05,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037266500",
+    "population": 5321,
+    "median_income": 40900,
+    "poverty_rate": 0.25,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037266600",
+    "population": 4087,
+    "median_income": 64700,
+    "poverty_rate": 0.13,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037266700",
+    "population": 3856,
+    "median_income": 76600,
+    "poverty_rate": 0.09,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037266800",
+    "population": 5098,
+    "median_income": 49100,
+    "poverty_rate": 0.19,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037266900",
+    "population": 3421,
+    "median_income": 88100,
+    "poverty_rate": 0.06,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037267000",
+    "population": 4876,
+    "median_income": 42700,
+    "poverty_rate": 0.24,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037267100",
+    "population": 3987,
+    "median_income": 65900,
+    "poverty_rate": 0.11,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037267200",
+    "population": 4678,
+    "median_income": 55800,
+    "poverty_rate": 0.16,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037267300",
+    "population": 3087,
+    "median_income": 94200,
+    "poverty_rate": 0.04,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037267400",
+    "population": 5124,
+    "median_income": 41300,
+    "poverty_rate": 0.26,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037267500",
+    "population": 4234,
+    "median_income": 63500,
+    "poverty_rate": 0.12,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037267600",
+    "population": 3912,
+    "median_income": 75700,
+    "poverty_rate": 0.09,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037267700",
+    "population": 5432,
+    "median_income": 47400,
+    "poverty_rate": 0.20,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037267800",
+    "population": 3543,
+    "median_income": 83700,
+    "poverty_rate": 0.07,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037267900",
+    "population": 4987,
+    "median_income": 45300,
+    "poverty_rate": 0.22,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037268000",
+    "population": 3987,
+    "median_income": 68600,
+    "poverty_rate": 0.11,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037268100",
+    "population": 4654,
+    "median_income": 57500,
+    "poverty_rate": 0.15,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037268200",
+    "population": 3198,
+    "median_income": 96300,
+    "poverty_rate": 0.04,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037268300",
+    "population": 5234,
+    "median_income": 38600,
+    "poverty_rate": 0.28,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037268400",
+    "population": 4321,
+    "median_income": 61700,
+    "poverty_rate": 0.14,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  },
+  {
+    "geoid": "06037268500",
+    "population": 3945,
+    "median_income": 73200,
+    "poverty_rate": 0.10,
+    "data_year": 2022,
+    "source": "ACS 5-Year"
+  }
+]

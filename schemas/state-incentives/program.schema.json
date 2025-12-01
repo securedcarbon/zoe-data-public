@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://zoe-data.securedcarbon.com/schemas/state-incentives/program.schema.json",
+  "title": "State Incentive Program",
+  "description": "State-level battery energy storage incentive program (SGIP, NYSERDA, Mass Save, etc.)",
+  "type": "object",
+  "required": ["meta", "source_urls"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "JSON Schema reference"
+    },
+    "meta": {
+      "type": "object",
+      "description": "Metadata about data source and validation",
+      "required": ["source", "last_updated", "validated_by"],
+      "properties": {
+        "source": {
+          "type": "string",
+          "description": "Source of the data (program name or website)"
+        },
+        "last_updated": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+          "description": "Date data was last updated (YYYY-MM-DD)"
+        },
+        "validated_by": {
+          "type": "string",
+          "description": "Team or worker that validated the data"
+        },
+        "update_frequency": {
+          "type": "string",
+          "enum": ["annual", "quarterly", "monthly", "weekly", "as_needed"],
+          "description": "How often the data should be updated"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Additional notes about the data or program"
+        }
+      }
+    },
+    "program": {
+      "type": "object",
+      "description": "Core program information",
+      "required": ["name", "state"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Official program name"
+        },
+        "abbreviation": {
+          "type": "string",
+          "description": "Program abbreviation (e.g., 'SGIP', 'NYSERDA')"
+        },
+        "state": {
+          "type": "string",
+          "pattern": "^[A-Z]{2}$",
+          "description": "Two-letter state code (e.g., 'CA', 'NY', 'MA')"
+        },
+        "administrator": {
+          "type": "string",
+          "description": "Program administrator (e.g., 'CPUC', 'NYSERDA')"
+        },
+        "administrators": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Multiple program administrators (alternative to single administrator)"
+        },
+        "program_type": {
+          "type": "string",
+          "enum": ["incentive", "demand_response", "rebate", "mixed", "virtual_power_plant"],
+          "description": "Type of program"
+        },
+        "program_end_date": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+          "description": "Program end date (if applicable)"
+        },
+        "total_budget_authorized": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Total program budget in dollars"
+        },
+        "total_program_budget": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Total program budget (alternative field name)"
+        },
+        "residential_budget": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Residential-specific budget"
+        },
+        "currency": {
+          "type": "string",
+          "enum": ["USD"],
+          "description": "Currency for all monetary values"
+        },
+        "goal_2030_gw": {
+          "type": "number",
+          "description": "Storage deployment goal in GW by 2030"
+        },
+        "retail_target_mw": {
+          "type": "number",
+          "description": "Retail storage target in MW"
+        },
+        "residential_target_mw": {
+          "type": "number",
+          "description": "Residential storage target in MW"
+        }
+      }
+    },
+    "source_urls": {
+      "type": "object",
+      "description": "Reference URLs for program information",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

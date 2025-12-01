@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://zoe-data.securedcarbon.com/schemas/utility-programs/demand-response.schema.json",
+  "title": "Utility Demand Response Programs",
+  "description": "Collection of utility demand response and load management programs",
+  "type": "object",
+  "required": ["utility", "state"],
+  "properties": {
+    "utility": {
+      "type": "string",
+      "description": "Utility name"
+    },
+    "state": {
+      "type": "string",
+      "description": "State postal abbreviation"
+    },
+    "programs": {
+      "type": "array",
+      "description": "Array of demand response programs offered by this utility",
+      "minItems": 1
+    },
+    "service_territory": {
+      "type": ["string", "array", "null"],
+      "description": "Service territory or territories"
+    },
+    "eligibility": {
+      "type": "object",
+      "description": "Program eligibility requirements"
+    },
+    "payment_terms": {
+      "type": "object",
+      "description": "Payment structure and terms"
+    },
+    "event_characteristics": {
+      "type": ["object", "null"],
+      "description": "Event parameters (duration, frequency, etc.)"
+    },
+    "program_duration": {
+      "type": ["object", "null"],
+      "description": "Program start and end dates"
+    },
+    "season": {
+      "type": ["string", "array", "object", "null"],
+      "description": "Seasonal availability"
+    },
+    "subprograms": {
+      "type": ["array", "null"],
+      "description": "Sub-programs or variants"
+    },
+    "related_programs": {
+      "type": ["array", "null"],
+      "description": "Related or complementary programs"
+    },
+    "automation_potential": {
+      "type": "object",
+      "description": "Automation feasibility assessment"
+    },
+    "data_source": {
+      "type": ["object", "string", "null"],
+      "description": "Source information for this data"
+    },
+    "contacts": {
+      "type": ["object", "array", "null"],
+      "description": "Program contacts"
+    },
+    "last_verified": {
+      "type": "string",
+      "description": "Last verification date"
+    },
+    "notes": {
+      "type": ["string", "array", "null"],
+      "description": "Additional notes or comments"
+    }
+  }
+}

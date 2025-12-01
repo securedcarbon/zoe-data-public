@@ -1,0 +1,140 @@
+{
+  "utility": "Consolidated Edison Company of New York (Con Edison)",
+  "state": "NY",
+  "service_territory": "New York City and Westchester County",
+  "data_source": "https://www.coned.com/en/save-money/rebates-incentives-tax-credits/rebates-incentives-for-commercial-industrial-buildings-customers/demand-response-programs",
+  "last_verified": "2025-11-29",
+  "programs": [
+    {
+      "program_name": "Dynamic Load Management - Term (Term-DLM)",
+      "program_id": "CONED-TERM-DLM",
+      "program_type": "demand_response",
+      "participant_type": "commercial_industrial",
+      "program_description": "Demand response program where customers commit to reducing load during system peak events",
+      "enrollment_method": [
+        "aggregator",
+        "direct_enrollment"
+      ],
+      "capability_period": {
+        "year": 2025,
+        "committed_load_reduction_mw": 122
+      },
+      "network_structure": {
+        "total_networks": 82,
+        "network_tiers": [
+          {
+            "tier": 1,
+            "description": "Standard networks",
+            "recent_changes_2025": [
+              "Riverdale reverted from Tier 2 to Tier 1",
+              "Southeast Bronx reverted from Tier 2 to Tier 1"
+            ]
+          },
+          {
+            "tier": 2,
+            "description": "High-value networks with greater incentives",
+            "recent_changes_2025": [
+              "Park Slope upgraded to Tier 2",
+              "Richmond Hill upgraded to Tier 2"
+            ]
+          }
+        ],
+        "network_consolidation_2025": "Randall's Island network merged with West Bronx network"
+      },
+      "call_windows": {
+        "note": "Call windows updated for 2025 to better align with observed network load peaks",
+        "customized_by_network": true
+      },
+      "event_characteristics": {
+        "events_called_2024": 5,
+        "event_trigger": "peak_demand_periods",
+        "notification": "advance_notice_provided"
+      },
+      "incentive_structure": {
+        "type": "capacity_and_energy_payments",
+        "basis": "committed_load_reduction",
+        "tier_based": true,
+        "note": "Tier 2 networks receive higher incentive rates"
+      },
+      "enrollment_requirements": {
+        "customer_type": "commercial_industrial",
+        "enrollment_method": "aggregator_or_direct",
+        "network_specific": true
+      },
+      "contacts": {
+        "rfp_document": "https://www.coned.com/-/media/files/coned/documents/business-partners/business-opportunities/dynamic-load-managment/2025-2026/rfp.pdf"
+      }
+    },
+    {
+      "program_name": "Dynamic Load Management - Auto (Auto-DLM)",
+      "program_id": "CONED-AUTO-DLM",
+      "program_type": "demand_response",
+      "participant_type": "commercial_industrial",
+      "program_description": "Automated demand response program with automatic load curtailment",
+      "enrollment_method": [
+        "aggregator",
+        "direct_enrollment"
+      ],
+      "automation": {
+        "automatic_curtailment": true,
+        "requires_automation_technology": true
+      },
+      "incentive_structure": {
+        "type": "capacity_and_energy_payments",
+        "basis": "committed_load_reduction",
+        "automation_premium": "Higher rates than Term-DLM due to automatic dispatch"
+      },
+      "contacts": {
+        "program_page": "https://www.coned.com/en/save-money/rebates-incentives-tax-credits"
+      }
+    },
+    {
+      "program_name": "NYC City Agencies Demand Response",
+      "program_id": "NYC-DR",
+      "program_type": "government_demand_response",
+      "participant_type": "government",
+      "participation": {
+        "year_2025": {
+          "facilities": 668,
+          "agencies_organizations": 36,
+          "committed_load_reduction_mw": 122
+        }
+      },
+      "historical_performance": {
+        "period": "2013-2024",
+        "total_revenues_earned": 153000000,
+        "currency": "USD",
+        "note": "Total program revenues earned by City agencies"
+      },
+      "program_description": "City of New York agencies participate in Con Edison DR programs to reduce load during peak demand",
+      "administering_agency": "NYC Department of Citywide Administrative Services (DCAS)",
+      "contacts": {
+        "program_page": "https://www.nyc.gov/site/dcas/agencies/demand-response.page"
+      }
+    }
+  ],
+  "regulatory_updates": {
+    "2024_commission_order": {
+      "date": "March 2024",
+      "title": "Order Directing Dynamic Load Management Program Changes",
+      "issuing_body": "New York Public Service Commission",
+      "source": "https://documents.dps.ny.gov/"
+    }
+  },
+  "automation_potential": {
+    "data_accessibility": "medium",
+    "update_frequency": "annual",
+    "api_available": false,
+    "scraping_feasibility": "medium",
+    "structured_data": false,
+    "notes": "Program data published in regulatory filings and RFP documents. Network tier assignments change annually. NYC DCAS publishes city agency participation data."
+  },
+  "notes": [
+    "Con Edison serves New York City, one of the most load-constrained areas in the US",
+    "Network-based program design reflects NYC's unique grid topology",
+    "Tier 2 networks have higher load relief value and receive premium incentives",
+    "Program critical for grid reliability during summer heat events",
+    "NYC city agencies are major participants, demonstrating government leadership in DR",
+    "82 distinct networks across service territory, each with customized call windows"
+  ]
+}
